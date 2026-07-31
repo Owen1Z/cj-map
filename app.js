@@ -823,4 +823,3 @@ function init() {
 }
 
 init();
-
