@@ -367,7 +367,254 @@ const spotlight = [
   },
   {
     venue: "E7", code: "E7-S802", name: "达尔优", type: "键鼠 / 硬件",
-    tags…3090 tokens truncated…cludes(vendorName) || vendorName.includes(referenceName));
+    tags: ["硬件", "键鼠"], priority: true,
+    intro: "与迈从、前行者同区，可连续浏览。",
+    egg: "互动、体验和抽奖以现场规则为准。",
+    steps: ["查看当日互动牌", "完成体验或打卡", "确认兑换/抽奖时间"],
+    requirements: "暂无稳定的具体无料清单。",
+    note: "官方名单已核验。",
+  },
+  {
+    venue: "E7", code: "E7-S807", name: "松能 X", type: "电竞家具",
+    tags: ["四品牌集章", "电竞椅", "3D 打印机"], hasEgg: true, priority: true,
+    intro: "集章截止时间早，必须在上午或中午前处理。",
+    egg: "四品牌集章，13:00 截止，可抽电竞椅、3D 打印机、支架。",
+    steps: ["到 E7-S807 领取四品牌集章规则", "在 13:00 前完成四品牌集章", "按规则参与抽奖或兑换支架"],
+    requirements: "13:00 是关键截止点；大型奖品属于抽奖，不是必得。",
+    note: "来自用户经验贴，现场可能调整截止时间。",
+  },
+];
+
+const routeStops = [
+  { time: "09:00", venue: "E6", code: "E6-E096", title: "先拿 HiBy 二次元硬件物料", text: "开场先处理拍照发帖兑换，避免下午排队。" },
+  { time: "09:40", venue: "N1", code: "N1-G001", title: "PlayStation / GSE", text: "先确认 PlayStation 活动，再顺路领取 GSE 小册子和集章本。" },
+  { time: "11:00", venue: "N2", code: "N2-G201", title: "代号：香整理券", text: "优先问整理券和预约卡，发完就跳过长队。" },
+  { time: "11:40", venue: "N2", code: "N2-11-2", title: "好游快爆 / Bilibili", text: "先做短流程试玩和集章，热门互动留到队列较短时。" },
+  { time: "13:30", venue: "N3", code: "N3-01", title: "华为鸿蒙任务", text: "午后处理图鉴任务，先核验移动电源库存和兑换规则。" },
+  { time: "14:20", venue: "N3", code: "N3-10", title: "峡谷争锋集章", text: "有时间再完成整套集章，避免为了单个物料反复折返。" },
+  { time: "15:30", venue: "E6", code: "E6-E201", title: "掌机和硬件体验", text: "错开开场峰值，查看 OneXPlayer、Sony INZONE、VGN。" },
+  { time: "16:20", venue: "E7", code: "E7-S807", title: "E7 集章收尾", text: "松能 X 集章需留意 13:00 截止，晚到只看其他展位。" },
+];
+
+const hotspotPositions = {
+  overview: [
+    // Coordinates are relative to the source image, not the letterboxed map frame.
+    ["N1", 36.2, 31.5], ["N2", 45.4, 31.5], ["N3", 54.6, 31.5], ["N4", 63.5, 31.5], ["N5", 71.8, 31.5],
+    ["E3", 54.7, 64.5], ["E4", 61.8, 58.5], ["E5", 67.5, 53.3], ["E6", 74.0, 47.0], ["E7", 81.5, 42.0],
+  ],
+};
+
+// Source-map coordinates. Fixed blocks are placed on their printed vendor panel;
+// grouped side booths are handled by the venue-specific fallback rules below.
+const boothPointAnchors = {
+  N2: {
+    "N2-01": [61, 88], "N2-02": [61, 76], "N2-03": [61, 61], "N2-04": [61, 49], "N2-05": [27, 71],
+    "N2-06": [27, 79], "N2-07": [27, 58], "N2-08": [27, 45], "N2-09": [27, 22], "N2-11-1": [61, 43],
+    "N2-11-2": [61, 46], "N2-12": [61, 32], "N2-13": [75, 44], "N2-14": [76, 32], "N2-15": [27, 68],
+    "N2-G101": [54, 9], "N2-G105": [60, 9], "N2-G106": [64, 9], "N2-G108": [69, 9], "N2-G201": [89, 18], "N2-G207": [89, 22],
+  },
+  N3: {
+    "N3-01": [36, 81], "N3-02": [36, 63], "N3-03": [36, 46], "N3-05": [36, 28], "N3-06": [73, 81],
+    "N3-07": [73, 63], "N3-08": [73, 46], "N3-09": [73, 20], "N3-10": [39, 17], "N3-11": [24, 17],
+  },
+  N4: {
+    "N4-01": [67, 82], "N4-02": [32, 82], "N4-03": [32, 45], "N4-05": [67, 52], "N4-07": [67, 20],
+  },
+  N5: {
+    "N5-01": [33, 80], "N5-02": [33, 60], "N5-03": [33, 42], "N5-04": [33, 28], "N5-05": [33, 16],
+    "N5-06": [72, 80], "N5-07": [72, 60], "N5-08": [72, 42], "N5-09": [72, 22],
+  },
+  E3: {
+    "E3-CA101": [43, 19], "E3-CA102": [43, 29], "E3-CA104": [27, 19], "E3-CA105": [27, 29],
+    "E3-CA201": [42, 39], "E3-CA202": [42, 48], "E3-CA203": [42, 55], "E3-CA204": [32, 48], "E3-CA205": [32, 39],
+    "E3-CA206": [23, 39], "E3-CA207": [23, 45], "E3-CA208": [23, 53], "E3-CA209": [32, 55],
+    "E3-CA302": [43, 66], "E3-CA303": [43, 74], "E3-CA304": [32, 66], "E3-CA305": [23, 61], "E3-CA306": [23, 66],
+    "E3-CA307": [32, 74], "E3-CA308": [23, 74], "E3-CH101": [65, 20], "E3-CH201": [59, 40], "E3-CH203": [59, 52],
+    "E3-CH204": [73, 40], "E3-CH206": [73, 52], "E3-CH601": [59, 10],
+  },
+  E4: {
+    "E4-M001": [60, 21], "E4-M002": [60, 34], "E4-M003": [80, 20], "E4-M005": [80, 28], "E4-M006": [80, 37],
+    "E4-M007": [80, 42], "E4-M008": [69, 34], "E4-M090": [90, 22], "E4-M096": [90, 27], "E4-M201-2": [68, 12],
+    "E4-M202": [32, 12], "E4-M290": [80, 27], "E4-M296": [80, 27], "E4-M301": [40, 21], "E4-M302": [40, 38],
+    "E4-M302-1": [40, 38], "E4-M303": [40, 29], "E4-M305": [27, 38], "E4-M306": [22, 21], "E4-M307": [22, 29],
+    "E4-M308": [22, 35],
+  },
+  E5: {
+    "E5-FM101": [58, 19], "E5-FM102": [58, 29], "E5-FM103": [78, 19], "E5-FM104": [78, 29], "E5-FM201": [40, 19],
+    "E5-FM202-1": [22, 19], "E5-FM202-2": [22, 24], "E5-FM203": [40, 36], "E5-FM204": [22, 29], "E5-FM205": [40, 27],
+    "E5-FM205-1": [40, 27], "E5-FM205-2": [40, 27], "E5-FM205-3": [40, 27], "E5-FM205-4": [40, 27], "E5-FM205-5": [40, 27],
+    "E5-FM205-6": [40, 27], "E5-FM206": [22, 35], "E5-FM301-1": [58, 45], "E5-FM301-2": [62, 45], "E5-FM302-2": [58, 59],
+    "E5-FM304": [78, 45], "E5-FM305": [78, 51], "E5-FM305-1": [78, 51], "E5-FM305-2": [78, 51], "E5-FM305-3": [78, 51],
+    "E5-FM305-4": [78, 51], "E5-FM306": [78, 60], "E5-FM401": [40, 45], "E5-FM402": [40, 54], "E5-FM403": [40, 62],
+    "E5-FM404": [22, 45], "E5-FM405": [22, 52], "E5-FM406": [22, 61], "E5-FM501": [58, 70], "E5-FM503": [70, 70],
+    "E5-FM504": [70, 78], "E5-FM505": [70, 85], "E5-FM506": [80, 70], "E5-FM507": [80, 78], "E5-FM603": [44, 80],
+    "E5-FM604": [32, 70], "E5-FM605": [32, 78], "E5-FM606": [32, 85], "E5-FM607": [22, 70], "E5-FM609": [22, 85],
+    "E5-FM804": [58, 54], "E5-FM805": [63, 54], "E5-FM808": [58, 78], "E5-FM809": [58, 85],
+  },
+  E6: {
+    "E6-E001": [62, 18], "E6-E002": [62, 34], "E6-E003": [77, 18], "E6-E005": [77, 29], "E6-E101": [35, 18],
+    "E6-E103": [20, 18], "E6-E105": [20, 25], "E6-E201": [62, 43], "E6-E202": [62, 51], "E6-E203": [62, 59],
+    "E6-E206": [77, 43], "E6-E207": [77, 59], "E6-E301": [35, 43], "E6-E302": [35, 51], "E6-E303": [35, 59],
+    "E6-E305": [20, 43], "E6-E306": [20, 51], "E6-E307": [20, 55], "E6-E308": [20, 59], "E6-E501": [35, 29],
+    "E6-E502": [35, 69], "E6-E503": [20, 69], "E6-E506": [20, 34], "E6-E507": [20, 29], "E6-EDC01": [35, 76],
+    "E6-EDC11": [20, 84], "E6-ST001": [62, 69], "E6-ST002": [62, 82], "E6-ST003": [62, 89], "E6-ST005": [77, 69],
+    "E6-ST006": [77, 75], "E6-ST601": [77, 66], "E6-ST602": [77, 68], "E6-ST603": [77, 73], "E6-ST701": [77, 66],
+  },
+  E7: {
+    "E7-S001": [60, 18], "E7-S002": [60, 29], "E7-S003-1": [78, 18], "E7-S005": [78, 29], "E7-S101-1": [32, 18],
+    "E7-S101-2": [32, 18], "E7-S201": [60, 43], "E7-S202": [78, 43], "E7-S203": [78, 51], "E7-S205": [78, 59],
+    "E7-S301": [35, 51], "E7-S302": [35, 43], "E7-S303": [20, 43], "E7-S305": [20, 51], "E7-S501": [60, 68],
+    "E7-S502": [78, 68], "E7-S503": [78, 78], "E7-S505": [78, 73], "E7-S601": [35, 68], "E7-S602": [35, 78],
+    "E7-S603-1": [20, 64], "E7-S603-2": [20, 68], "E7-S605": [20, 78], "E7-S701-1": [60, 88], "E7-S701-2": [60, 88],
+    "E7-S702": [60, 95], "E7-S705": [78, 88], "E7-S706": [78, 94], "E7-S707": [78, 95], "E7-S708": [78, 99],
+    "E7-S801": [35, 88], "E7-S802": [35, 95], "E7-S805": [20, 88], "E7-S806": [20, 94], "E7-S807": [20, 99],
+    "E7-S808": [20, 96], "E7-S893": [10, 97],
+  },
+};
+
+const state = {
+  currentVenue: "overview",
+  selectedBooth: null,
+  query: "",
+  favoritesOnly: false,
+  favorites: new Set(loadFavorites()),
+  official: [],
+  officialLoaded: false,
+  referenceBooths: [],
+  referenceLoaded: false,
+  referenceVendorById: new Map(),
+  routeOpen: false,
+  showAllBooths: true,
+};
+
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => [...document.querySelectorAll(selector)];
+
+function escapeHtml(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function cleanCode(code = "") {
+  return String(code).replaceAll(/\s+/g, "").toUpperCase();
+}
+
+function loadFavorites() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("cj2026-favorites") || "[]");
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveFavorites() {
+  try {
+    localStorage.setItem("cj2026-favorites", JSON.stringify([...state.favorites]));
+  } catch {
+    // Local storage may be unavailable in private file previews.
+  }
+}
+
+function byCode(code) {
+  const target = cleanCode(code);
+  return spotlight.find((vendor) => cleanCode(vendor.code) === target)
+    || state.official.find((vendor) => cleanCode(vendor.code) === target)
+    || null;
+}
+
+function officialToVendor(item) {
+  const code = item.code || "";
+  const venueMatch = code.replaceAll(/\s+/g, "").match(/^(N[1-5]|E[3-7])/i);
+  const venue = venueMatch ? venueMatch[1].toUpperCase() : item.area || code.slice(0, 1) || "";
+  const name = item.name_zh || item.name_en || "未命名展商";
+  const intro = (item.introduction_zh || item.introduction_en || "官方展商信息").replace(/\s+/g, " ").trim();
+  return {
+    venue,
+    code: item.code || `${venue}-官方展位`,
+    name,
+    type: inferType(`${name} ${intro}`),
+    tags: ["官方名单"],
+    intro: intro.slice(0, 120),
+    egg: "暂无已核验的具体无料记录。",
+    steps: ["到达官方展位", "查看当日活动牌和互动规则", "按现场规则确认是否有领取物料"],
+    requirements: "物料和活动以现场公告为准。",
+    note: "来自 CJ 官方展商名单；页面未把未经核验的赠品写成固定奖励。",
+    official: true,
+  };
+}
+
+function inferType(text) {
+  if (/键鼠|显示器|硬件|掌机|电竞椅|手机|数码|音频|桌搭/.test(text)) return "硬件";
+  if (/摄影|相机|影像|Polaroid/.test(text)) return "摄影";
+  if (/潮玩|模玩|动漫|二次元|IP|角色/.test(text)) return "二次元 / 潮玩";
+  if (/媒体|平台|发行/.test(text)) return "游戏媒体";
+  return "游戏";
+}
+
+function getVendorData(code) {
+  return byCode(code) || null;
+}
+
+function allVendors() {
+  const known = new Map();
+  [...spotlight, ...state.official].forEach((vendor) => {
+    const key = cleanCode(vendor.code);
+    if (!known.has(key)) known.set(key, vendor);
+  });
+  return [...known.values()];
+}
+
+function getVenueVendors(venueKey) {
+  const spotlightItems = spotlight.filter((vendor) => venueKey === "overview" || vendor.venue === venueKey);
+  const officialItems = state.official.filter((vendor) => venueKey === "overview" || vendor.venue === venueKey);
+  const known = new Map();
+  [...spotlightItems, ...officialItems].forEach((vendor) => {
+    const key = cleanCode(vendor.code);
+    if (!known.has(key)) known.set(key, vendor);
+  });
+  return [...known.values()];
+}
+
+function normalizeText(value = "") {
+  return String(value).toLowerCase().replace(/[\s·・,，.。/\\()（）+&：:「」《》]/g, "");
+}
+
+const referenceAliases = {
+  "n1-aigo": "N1-G202",
+  "n1-gse": "N1-G205",
+  "n1-playstation": "N1-G001",
+  "n2-代号香": "N2-G201",
+  "n3-华为游戏中心": "N3-01",
+  "n3-暴雪游戏": "N3-03",
+  "e5-淘天潮玩": "E5-FM102",
+  "e6-维信诺": "E6-E001",
+  "e6-索尼inzone": "E6-E002",
+  "e6-傲风": "E6-E003",
+  "e6-hiby": "E6-E096",
+  "e6-vgn": "E6-E101",
+  "e6-onexplayer": "E6-E201",
+  "e6-绿联": "E6-E506",
+  "e6-aulumu": "E6-EDC01",
+  "e7-迈从": "E7-S201",
+  "e7-前行者": "E7-S602",
+  "e7-黑鲨": "E7-S603-1",
+  "e7-达尔优": "E7-S802",
+  "e7-松能x": "E7-S807",
+};
+
+function getReferenceVendor(reference) {
+  const aliasCode = referenceAliases[normalizeText(reference.id)] || referenceAliases[normalizeText(reference.name)];
+  const aliasVendor = aliasCode ? byCode(aliasCode) : null;
+  const referenceName = normalizeText(reference.name);
+  const candidates = [...spotlight, ...state.official];
+  const matched = aliasVendor || candidates.find((vendor) => {
+    const vendorName = normalizeText(vendor.name);
+    return vendorName.length > 2 && (referenceName.includes(vendorName) || vendorName.includes(referenceName));
   });
 
   const vendor = matched || {
