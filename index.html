@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0e1b34" />
+    <title>CJ 2026 场馆导航</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="brand-mark"><span>cj</span><i></i></div>
+          <div>
+            <p class="eyebrow">CHINAJOY / 2026</p>
+            <h1>场馆导航</h1>
+          </div>
+        </div>
+
+        <div class="audience-badge">
+          <span class="status-dot"></span>
+          <span>8.1 普通观众日</span>
+          <span class="badge-tail">N / E</span>
+        </div>
+
+        <div class="nav-section-label">浏览场馆</div>
+        <nav class="venue-nav" id="venueNav" aria-label="场馆选择"></nav>
+
+        <div class="sidebar-footer">
+          <div class="footer-line"><span>入口</span><strong>1 号门</strong></div>
+          <div class="footer-line"><span>票种</span><strong>普通票 ¥180</strong></div>
+          <div class="footer-note">商务会谈馆 / W 区不纳入普通票路线</div>
+        </div>
+      </aside>
+
+      <div class="mobile-dimmer" id="mobileDimmer"></div>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="icon-button mobile-menu" id="navToggle" type="button" title="打开场馆导航" aria-label="打开场馆导航">
+              <i data-lucide="menu"></i>
+            </button>
+            <div class="topbar-context">
+              <span class="context-dot"></span>
+              <span>普通观众动线</span>
+            </div>
+          </div>
+          <div class="topbar-actions">
+            <button class="quiet-button" id="routeToggle" type="button">
+              <i data-lucide="route"></i>
+              <span>我的路线</span>
+            </button>
+            <button class="icon-button" id="favoritesToggle" type="button" title="只看收藏" aria-label="只看收藏">
+              <i data-lucide="heart"></i>
+              <span class="favorite-count" id="favoriteCount">0</span>
+            </button>
+            <label class="search-box" for="searchInput">
+              <i data-lucide="search"></i>
+              <input id="searchInput" type="search" placeholder="搜索厂商 / 展位 / 物料" autocomplete="off" />
+              <kbd>/</kbd>
+            </label>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="page-heading">
+            <div>
+              <p class="eyebrow" id="venueKicker">全部可达场馆 / BTOC</p>
+              <div class="heading-line">
+                <h2 id="venueTitle">场馆总览</h2>
+                <span class="live-chip"><span></span>现场导览</span>
+              </div>
+              <p class="heading-description" id="venueDescription">先看整体位置，再点进具体场馆查看厂商、展位和无料。</p>
+            </div>
+            <div class="heading-meta" id="headingMeta"></div>
+          </section>
+
+          <section class="metric-row" id="metricRow" aria-label="场馆统计"></section>
+
+          <section class="workspace-grid">
+            <section class="map-panel">
+              <div class="panel-toolbar">
+                <div>
+                  <p class="panel-overline">LIVE MAP</p>
+                  <h3 id="mapTitle">全部场馆</h3>
+                </div>
+                <div class="map-tools">
+                  <span class="map-hint"><i data-lucide="mouse-pointer-2"></i> 点击标签查看</span>
+                  <button class="map-density-button" id="boothDensityToggle" type="button" title="切换全部摊位标签" aria-label="切换全部摊位标签">
+                    <i data-lucide="layers-3"></i>
+                    <span>全部摊位</span>
+                  </button>
+                  <button class="icon-button small" id="resetMap" type="button" title="重置地图视图" aria-label="重置地图视图"><i data-lucide="scan"></i></button>
+                </div>
+              </div>
+              <div class="map-frame" id="mapFrame">
+                <img id="mapImage" src="assets/overview.png" alt="ChinaJoy 2026 场馆地图" />
+                <div class="map-hotspots" id="mapHotspots"></div>
+                <div class="map-frame-glow"></div>
+              </div>
+              <div class="map-footer">
+                <div class="map-legend">
+                  <span><i class="legend-dot legend-priority"></i>优先目标</span>
+                  <span><i class="legend-dot legend-egg"></i>有物料记录</span>
+                  <span><i class="legend-dot legend-neutral"></i>官方展位</span>
+                </div>
+                <span class="map-source">地图：官方场馆图</span>
+              </div>
+            </section>
+
+            <aside class="inspector" id="inspector" aria-live="polite">
+              <div class="inspector-empty" id="inspectorEmpty">
+                <div class="empty-icon"><i data-lucide="map-pin"></i></div>
+                <p class="panel-overline">SELECT A BOOTH</p>
+                <h3>选择一个展位</h3>
+                <p>点击地图热点或下方厂商卡片，查看展位位置、无料步骤和现场提醒。</p>
+              </div>
+              <div class="inspector-content" id="inspectorContent" hidden></div>
+            </aside>
+          </section>
+
+          <section class="route-panel" id="routePanel" hidden>
+            <div class="section-heading">
+              <div>
+                <p class="panel-overline">LOW-CROWD PLAN</p>
+                <h3>8.1 普通观众避峰路线</h3>
+              </div>
+              <button class="icon-button small" id="closeRoute" type="button" title="关闭路线" aria-label="关闭路线"><i data-lucide="x"></i></button>
+            </div>
+            <div class="route-timeline" id="routeTimeline"></div>
+          </section>
+
+          <section class="vendor-section">
+            <div class="section-heading">
+              <div>
+                <p class="panel-overline">EXHIBITORS</p>
+                <h3 id="vendorTitle">重点厂商</h3>
+              </div>
+              <div class="section-actions">
+                <span class="result-count" id="resultCount">0 个展位</span>
+                <button class="filter-chip" id="clearFilter" type="button" hidden>清除筛选 <i data-lucide="x"></i></button>
+              </div>
+            </div>
+            <div class="vendor-grid" id="vendorGrid"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
