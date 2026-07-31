@@ -1,7 +1,3 @@
-Exit code: 0
-Wall time: 0.4 seconds
-Total output lines: 1073
-Output:
 const venues = {
   overview: {
     label: "场馆总览",
