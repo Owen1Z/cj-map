@@ -1,399 +1,399 @@
 const venues = {
   overview: {
-    label: "场馆总览",
+    label: "\u573a\u9986\u603b\u89c8",
     image: "overview.png",
-    area: "全部可达场馆",
-    description: "先看整体位置，再点进具体场馆查看厂商、展位和无料。",
+    area: "\u5168\u90e8\u53ef\u8fbe\u573a\u9986",
+    description: "\u5148\u770b\u6574\u4f53\u4f4d\u7f6e\uff0c\u518d\u70b9\u8fdb\u5177\u4f53\u573a\u9986\u67e5\u770b\u5382\u5546\u3001\u5c55\u4f4d\u548c\u65e0\u6599\u3002",
   },
   N1: {
-    label: "N1 游戏风云",
+    label: "N1 \u6e38\u620f\u98ce\u4e91",
     image: "n1.png",
-    area: "N 馆 / 游戏",
-    description: "主机、游戏媒体和体验展位，适合开场先逛。",
+    area: "N \u9986 / \u6e38\u620f",
+    description: "\u4e3b\u673a\u3001\u6e38\u620f\u5a92\u4f53\u548c\u4f53\u9a8c\u5c55\u4f4d\uff0c\u9002\u5408\u5f00\u573a\u5148\u901b\u3002",
   },
   N2: {
-    label: "N2 游戏风云",
+    label: "N2 \u6e38\u620f\u98ce\u4e91",
     image: "n2.png",
-    area: "N 馆 / 游戏",
-    description: "Bilibili、好游快爆和多人互动展位集中。",
+    area: "N \u9986 / \u6e38\u620f",
+    description: "Bilibili\u3001\u597d\u6e38\u5feb\u7206\u548c\u591a\u4eba\u4e92\u52a8\u5c55\u4f4d\u96c6\u4e2d\u3002",
   },
   N3: {
-    label: "N3 游戏风云",
+    label: "N3 \u6e38\u620f\u98ce\u4e91",
     image: "n3.png",
-    area: "N 馆 / 游戏",
-    description: "鸿蒙、网易、暴雪和游戏体验点。",
+    area: "N \u9986 / \u6e38\u620f",
+    description: "\u9e3f\u8499\u3001\u7f51\u6613\u3001\u66b4\u96ea\u548c\u6e38\u620f\u4f53\u9a8c\u70b9\u3002",
   },
   N4: {
-    label: "N4 游戏风云",
+    label: "N4 \u6e38\u620f\u98ce\u4e91",
     image: "n4.png",
-    area: "N 馆 / 游戏",
-    description: "腾讯、咪咕等展位，适合在午后错峰查看。",
+    area: "N \u9986 / \u6e38\u620f",
+    description: "\u817e\u8baf\u3001\u54aa\u5495\u7b49\u5c55\u4f4d\uff0c\u9002\u5408\u5728\u5348\u540e\u9519\u5cf0\u67e5\u770b\u3002",
   },
   N5: {
-    label: "N5 骁龙主题馆",
+    label: "N5 \u9a81\u9f99\u4e3b\u9898\u9986",
     image: "n5.png",
-    area: "N 馆 / 硬件",
-    description: "一加、红魔等移动设备和电竞硬件。",
+    area: "N \u9986 / \u786c\u4ef6",
+    description: "\u4e00\u52a0\u3001\u7ea2\u9b54\u7b49\u79fb\u52a8\u8bbe\u5907\u548c\u7535\u7ade\u786c\u4ef6\u3002",
   },
   E3: {
-    label: "E3 甜次元潮流生活",
+    label: "E3 \u751c\u6b21\u5143\u6f6e\u6d41\u751f\u6d3b",
     image: "e3.png",
-    area: "E 馆 / 二次元",
-    description: "潮流生活、角色内容和轻量打卡点。",
+    area: "E \u9986 / \u4e8c\u6b21\u5143",
+    description: "\u6f6e\u6d41\u751f\u6d3b\u3001\u89d2\u8272\u5185\u5bb9\u548c\u8f7b\u91cf\u6253\u5361\u70b9\u3002",
   },
   E4: {
-    label: "E4 次元视界 / 摄影区",
+    label: "E4 \u6b21\u5143\u89c6\u754c / \u6444\u5f71\u533a",
     image: "e4.png",
-    area: "E 馆 / 摄影",
-    description: "索尼影像、Polaroid 和摄影向展位。",
+    area: "E \u9986 / \u6444\u5f71",
+    description: "\u7d22\u5c3c\u5f71\u50cf\u3001Polaroid \u548c\u6444\u5f71\u5411\u5c55\u4f4d\u3002",
   },
   E5: {
-    label: "E5 模玩天地",
+    label: "E5 \u6a21\u73a9\u5929\u5730",
     image: "e5.png",
-    area: "E 馆 / 模玩",
-    description: "潮玩、模型和收藏类互动展位。",
+    area: "E \u9986 / \u6a21\u73a9",
+    description: "\u6f6e\u73a9\u3001\u6a21\u578b\u548c\u6536\u85cf\u7c7b\u4e92\u52a8\u5c55\u4f4d\u3002",
   },
   E6: {
-    label: "E6 发烧硬件",
+    label: "E6 \u53d1\u70e7\u786c\u4ef6",
     image: "e6.png",
-    area: "E 馆 / 硬件",
-    description: "显示器、键鼠、掌机和桌搭硬件集中。",
+    area: "E \u9986 / \u786c\u4ef6",
+    description: "\u663e\u793a\u5668\u3001\u952e\u9f20\u3001\u638c\u673a\u548c\u684c\u642d\u786c\u4ef6\u96c6\u4e2d\u3002",
   },
   E7: {
-    label: "E7 发烧硬件",
+    label: "E7 \u53d1\u70e7\u786c\u4ef6",
     image: "e7.png",
-    area: "E 馆 / 硬件",
-    description: "键鼠、电竞设备和桌面装备，适合后段慢逛。",
+    area: "E \u9986 / \u786c\u4ef6",
+    description: "\u952e\u9f20\u3001\u7535\u7ade\u8bbe\u5907\u548c\u684c\u9762\u88c5\u5907\uff0c\u9002\u5408\u540e\u6bb5\u6162\u901b\u3002",
   },
 };
 
 const spotlight = [
   {
-    venue: "N1", code: "N1-G001", name: "PlayStation", type: "主机游戏",
-    tags: ["PlayStation", "游戏体验", "优先"], priority: true,
-    intro: "主机玩家优先目标，建议开场先确认试玩和排队规则。",
-    egg: "以现场活动为准，重点关注试玩、拍照和官方互动。",
-    steps: ["到达 N1-G001，先看当天活动牌", "按工作人员指引完成试玩或互动", "确认是否需要关注官方账号后领取"],
-    requirements: "普通观众可达；热门时段可能排队，建议上午处理。",
-    note: "官方展位信息已核验；具体赠品以现场库存和活动牌为准。",
+    venue: "N1", code: "N1-G001", name: "PlayStation", type: "\u4e3b\u673a\u6e38\u620f",
+    tags: ["PlayStation", "\u6e38\u620f\u4f53\u9a8c", "\u4f18\u5148"], priority: true,
+    intro: "\u4e3b\u673a\u73a9\u5bb6\u4f18\u5148\u76ee\u6807\uff0c\u5efa\u8bae\u5f00\u573a\u5148\u786e\u8ba4\u8bd5\u73a9\u548c\u6392\u961f\u89c4\u5219\u3002",
+    egg: "\u4ee5\u73b0\u573a\u6d3b\u52a8\u4e3a\u51c6\uff0c\u91cd\u70b9\u5173\u6ce8\u8bd5\u73a9\u3001\u62cd\u7167\u548c\u5b98\u65b9\u4e92\u52a8\u3002",
+    steps: ["\u5230\u8fbe N1-G001\uff0c\u5148\u770b\u5f53\u5929\u6d3b\u52a8\u724c", "\u6309\u5de5\u4f5c\u4eba\u5458\u6307\u5f15\u5b8c\u6210\u8bd5\u73a9\u6216\u4e92\u52a8", "\u786e\u8ba4\u662f\u5426\u9700\u8981\u5173\u6ce8\u5b98\u65b9\u8d26\u53f7\u540e\u9886\u53d6"],
+    requirements: "\u666e\u901a\u89c2\u4f17\u53ef\u8fbe\uff1b\u70ed\u95e8\u65f6\u6bb5\u53ef\u80fd\u6392\u961f\uff0c\u5efa\u8bae\u4e0a\u5348\u5904\u7406\u3002",
+    note: "\u5b98\u65b9\u5c55\u4f4d\u4fe1\u606f\u5df2\u6838\u9a8c\uff1b\u5177\u4f53\u8d60\u54c1\u4ee5\u73b0\u573a\u5e93\u5b58\u548c\u6d3b\u52a8\u724c\u4e3a\u51c6\u3002",
   },
   {
-    venue: "N1", code: "N1-G202", name: "aigo", type: "硬件",
-    tags: ["硬件", "打卡"], priority: true,
-    intro: "N1 硬件向重点展位，适合与 PlayStation 同段处理。",
-    egg: "现场互动、拍照或关注活动可能对应小礼物。",
-    steps: ["到展位确认当日互动项目", "完成工作人员指定的互动", "领取物料并确认是否限量"],
-    requirements: "以现场活动牌为准；热门活动建议避开中午。",
-    note: "目前暂无稳定的具体赠品清单，页面将其标记为待现场确认。",
+    venue: "N1", code: "N1-G202", name: "aigo", type: "\u786c\u4ef6",
+    tags: ["\u786c\u4ef6", "\u6253\u5361"], priority: true,
+    intro: "N1 \u786c\u4ef6\u5411\u91cd\u70b9\u5c55\u4f4d\uff0c\u9002\u5408\u4e0e PlayStation \u540c\u6bb5\u5904\u7406\u3002",
+    egg: "\u73b0\u573a\u4e92\u52a8\u3001\u62cd\u7167\u6216\u5173\u6ce8\u6d3b\u52a8\u53ef\u80fd\u5bf9\u5e94\u5c0f\u793c\u7269\u3002",
+    steps: ["\u5230\u5c55\u4f4d\u786e\u8ba4\u5f53\u65e5\u4e92\u52a8\u9879\u76ee", "\u5b8c\u6210\u5de5\u4f5c\u4eba\u5458\u6307\u5b9a\u7684\u4e92\u52a8", "\u9886\u53d6\u7269\u6599\u5e76\u786e\u8ba4\u662f\u5426\u9650\u91cf"],
+    requirements: "\u4ee5\u73b0\u573a\u6d3b\u52a8\u724c\u4e3a\u51c6\uff1b\u70ed\u95e8\u6d3b\u52a8\u5efa\u8bae\u907f\u5f00\u4e2d\u5348\u3002",
+    note: "\u76ee\u524d\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u8d60\u54c1\u6e05\u5355\uff0c\u9875\u9762\u5c06\u5176\u6807\u8bb0\u4e3a\u5f85\u73b0\u573a\u786e\u8ba4\u3002",
   },
   {
-    venue: "N1", code: "N1-G205", name: "GSE", type: "游戏发行",
-    tags: ["小册子", "集章"], hasEgg: true,
-    intro: "适合顺路领取资料型物料，通常比大型互动点省时间。",
-    egg: "入场可领取小册子和集章本。",
-    steps: ["到 N1-G205 找 GSE 展位", "入场时询问小册子和集章本", "若有集章任务，先拿本再按现场指引完成"],
-    requirements: "数量有限，建议上午领取；无需默认排长队。",
-    note: "信息来自用户现场分享，具体款式和库存以现场为准。",
+    venue: "N1", code: "N1-G205", name: "GSE", type: "\u6e38\u620f\u53d1\u884c",
+    tags: ["\u5c0f\u518c\u5b50", "\u96c6\u7ae0"], hasEgg: true,
+    intro: "\u9002\u5408\u987a\u8def\u9886\u53d6\u8d44\u6599\u578b\u7269\u6599\uff0c\u901a\u5e38\u6bd4\u5927\u578b\u4e92\u52a8\u70b9\u7701\u65f6\u95f4\u3002",
+    egg: "\u5165\u573a\u53ef\u9886\u53d6\u5c0f\u518c\u5b50\u548c\u96c6\u7ae0\u672c\u3002",
+    steps: ["\u5230 N1-G205 \u627e GSE \u5c55\u4f4d", "\u5165\u573a\u65f6\u8be2\u95ee\u5c0f\u518c\u5b50\u548c\u96c6\u7ae0\u672c", "\u82e5\u6709\u96c6\u7ae0\u4efb\u52a1\uff0c\u5148\u62ff\u672c\u518d\u6309\u73b0\u573a\u6307\u5f15\u5b8c\u6210"],
+    requirements: "\u6570\u91cf\u6709\u9650\uff0c\u5efa\u8bae\u4e0a\u5348\u9886\u53d6\uff1b\u65e0\u9700\u9ed8\u8ba4\u6392\u957f\u961f\u3002",
+    note: "\u4fe1\u606f\u6765\u81ea\u7528\u6237\u73b0\u573a\u5206\u4eab\uff0c\u5177\u4f53\u6b3e\u5f0f\u548c\u5e93\u5b58\u4ee5\u73b0\u573a\u4e3a\u51c6\u3002",
   },
   {
-    venue: "N2", code: "N2-01", name: "鹅鸭杀", type: "多人游戏",
-    tags: ["互动游戏", "限定周边"], hasEgg: true,
-    intro: "多人互动型展位，适合喜欢游戏周边的观众。",
-    egg: "参与互动小游戏，有机会领取限定周边。",
-    steps: ["到 N2-01 询问当日小游戏", "完成一轮指定互动", "凭完成结果向工作人员领取周边"],
-    requirements: "奖品和参与名额可能限量，建议先问清是否需要排队或预约。",
-    note: "用户经验贴描述为有机会领取，不代表每位参与者都能拿到同款。",
+    venue: "N2", code: "N2-01", name: "\u9e45\u9e2d\u6740", type: "\u591a\u4eba\u6e38\u620f",
+    tags: ["\u4e92\u52a8\u6e38\u620f", "\u9650\u5b9a\u5468\u8fb9"], hasEgg: true,
+    intro: "\u591a\u4eba\u4e92\u52a8\u578b\u5c55\u4f4d\uff0c\u9002\u5408\u559c\u6b22\u6e38\u620f\u5468\u8fb9\u7684\u89c2\u4f17\u3002",
+    egg: "\u53c2\u4e0e\u4e92\u52a8\u5c0f\u6e38\u620f\uff0c\u6709\u673a\u4f1a\u9886\u53d6\u9650\u5b9a\u5468\u8fb9\u3002",
+    steps: ["\u5230 N2-01 \u8be2\u95ee\u5f53\u65e5\u5c0f\u6e38\u620f", "\u5b8c\u6210\u4e00\u8f6e\u6307\u5b9a\u4e92\u52a8", "\u51ed\u5b8c\u6210\u7ed3\u679c\u5411\u5de5\u4f5c\u4eba\u5458\u9886\u53d6\u5468\u8fb9"],
+    requirements: "\u5956\u54c1\u548c\u53c2\u4e0e\u540d\u989d\u53ef\u80fd\u9650\u91cf\uff0c\u5efa\u8bae\u5148\u95ee\u6e05\u662f\u5426\u9700\u8981\u6392\u961f\u6216\u9884\u7ea6\u3002",
+    note: "\u7528\u6237\u7ecf\u9a8c\u8d34\u63cf\u8ff0\u4e3a\u6709\u673a\u4f1a\u9886\u53d6\uff0c\u4e0d\u4ee3\u8868\u6bcf\u4f4d\u53c2\u4e0e\u8005\u90fd\u80fd\u62ff\u5230\u540c\u6b3e\u3002",
   },
   {
-    venue: "N2", code: "N2-02", name: "哔哩哔哩", type: "游戏 / 二次元",
-    tags: ["Bilibili", "热门", "优先"], priority: true,
-    intro: "你的偏好优先项，建议把核心活动和物料分开看，先确认排队机制。",
-    egg: "现场活动、游戏试玩或打卡可能对应周边，具体以当天任务牌为准。",
-    steps: ["到 N2-02 先拍下活动时间和领取规则", "优先处理无需长队的打卡或任务", "再根据剩余时间决定是否排热门互动"],
-    requirements: "人流预计较高；普通票可进入 N2，热门舞台和互动可能需排队。",
-    note: "未把未经确认的具体周边写死，避免把往届物料误当成 2026 现场物料。",
+    venue: "N2", code: "N2-02", name: "\u54d4\u54e9\u54d4\u54e9", type: "\u6e38\u620f / \u4e8c\u6b21\u5143",
+    tags: ["Bilibili", "\u70ed\u95e8", "\u4f18\u5148"], priority: true,
+    intro: "\u4f60\u7684\u504f\u597d\u4f18\u5148\u9879\uff0c\u5efa\u8bae\u628a\u6838\u5fc3\u6d3b\u52a8\u548c\u7269\u6599\u5206\u5f00\u770b\uff0c\u5148\u786e\u8ba4\u6392\u961f\u673a\u5236\u3002",
+    egg: "\u73b0\u573a\u6d3b\u52a8\u3001\u6e38\u620f\u8bd5\u73a9\u6216\u6253\u5361\u53ef\u80fd\u5bf9\u5e94\u5468\u8fb9\uff0c\u5177\u4f53\u4ee5\u5f53\u5929\u4efb\u52a1\u724c\u4e3a\u51c6\u3002",
+    steps: ["\u5230 N2-02 \u5148\u62cd\u4e0b\u6d3b\u52a8\u65f6\u95f4\u548c\u9886\u53d6\u89c4\u5219", "\u4f18\u5148\u5904\u7406\u65e0\u9700\u957f\u961f\u7684\u6253\u5361\u6216\u4efb\u52a1", "\u518d\u6839\u636e\u5269\u4f59\u65f6\u95f4\u51b3\u5b9a\u662f\u5426\u6392\u70ed\u95e8\u4e92\u52a8"],
+    requirements: "\u4eba\u6d41\u9884\u8ba1\u8f83\u9ad8\uff1b\u666e\u901a\u7968\u53ef\u8fdb\u5165 N2\uff0c\u70ed\u95e8\u821e\u53f0\u548c\u4e92\u52a8\u53ef\u80fd\u9700\u6392\u961f\u3002",
+    note: "\u672a\u628a\u672a\u7ecf\u786e\u8ba4\u7684\u5177\u4f53\u5468\u8fb9\u5199\u6b7b\uff0c\u907f\u514d\u628a\u5f80\u5c4a\u7269\u6599\u8bef\u5f53\u6210 2026 \u73b0\u573a\u7269\u6599\u3002",
   },
   {
-    venue: "N2", code: "N2-11-1", name: "4399", type: "游戏平台",
-    tags: ["游戏", "互动"],
-    intro: "可作为 N2 游戏区的顺路补充点。",
-    egg: "现场互动和试玩类物料以展位规则为准。",
-    steps: ["到展位看互动牌", "完成指定试玩或问答", "询问领取点和每日库存"],
-    requirements: "优先选择无需长队的项目。",
-    note: "官方名单可核验，物料记录暂不如重点小红书经验稳定。",
+    venue: "N2", code: "N2-11-1", name: "4399", type: "\u6e38\u620f\u5e73\u53f0",
+    tags: ["\u6e38\u620f", "\u4e92\u52a8"],
+    intro: "\u53ef\u4f5c\u4e3a N2 \u6e38\u620f\u533a\u7684\u987a\u8def\u8865\u5145\u70b9\u3002",
+    egg: "\u73b0\u573a\u4e92\u52a8\u548c\u8bd5\u73a9\u7c7b\u7269\u6599\u4ee5\u5c55\u4f4d\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u5230\u5c55\u4f4d\u770b\u4e92\u52a8\u724c", "\u5b8c\u6210\u6307\u5b9a\u8bd5\u73a9\u6216\u95ee\u7b54", "\u8be2\u95ee\u9886\u53d6\u70b9\u548c\u6bcf\u65e5\u5e93\u5b58"],
+    requirements: "\u4f18\u5148\u9009\u62e9\u65e0\u9700\u957f\u961f\u7684\u9879\u76ee\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u53ef\u6838\u9a8c\uff0c\u7269\u6599\u8bb0\u5f55\u6682\u4e0d\u5982\u91cd\u70b9\u5c0f\u7ea2\u4e66\u7ecf\u9a8c\u7a33\u5b9a\u3002",
   },
   {
-    venue: "N2", code: "N2-11-2", name: "好游快爆", type: "游戏媒体",
-    tags: ["试玩", "集章", "游戏周边"], hasEgg: true,
-    intro: "适合一边试玩一边完成集章，效率取决于现场队列。",
-    egg: "试玩、集章后可领取游戏周边。",
-    steps: ["到 N2-11-2 领取任务或集章说明", "完成试玩和指定集章", "集齐后到兑换处领取周边"],
-    requirements: "先确认集章点、兑换时间和每日上限。",
-    note: "来自用户经验贴，奖品可能按库存分批发放。",
+    venue: "N2", code: "N2-11-2", name: "\u597d\u6e38\u5feb\u7206", type: "\u6e38\u620f\u5a92\u4f53",
+    tags: ["\u8bd5\u73a9", "\u96c6\u7ae0", "\u6e38\u620f\u5468\u8fb9"], hasEgg: true,
+    intro: "\u9002\u5408\u4e00\u8fb9\u8bd5\u73a9\u4e00\u8fb9\u5b8c\u6210\u96c6\u7ae0\uff0c\u6548\u7387\u53d6\u51b3\u4e8e\u73b0\u573a\u961f\u5217\u3002",
+    egg: "\u8bd5\u73a9\u3001\u96c6\u7ae0\u540e\u53ef\u9886\u53d6\u6e38\u620f\u5468\u8fb9\u3002",
+    steps: ["\u5230 N2-11-2 \u9886\u53d6\u4efb\u52a1\u6216\u96c6\u7ae0\u8bf4\u660e", "\u5b8c\u6210\u8bd5\u73a9\u548c\u6307\u5b9a\u96c6\u7ae0", "\u96c6\u9f50\u540e\u5230\u5151\u6362\u5904\u9886\u53d6\u5468\u8fb9"],
+    requirements: "\u5148\u786e\u8ba4\u96c6\u7ae0\u70b9\u3001\u5151\u6362\u65f6\u95f4\u548c\u6bcf\u65e5\u4e0a\u9650\u3002",
+    note: "\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\uff0c\u5956\u54c1\u53ef\u80fd\u6309\u5e93\u5b58\u5206\u6279\u53d1\u653e\u3002",
   },
   {
-    venue: "N2", code: "N2-G201", name: "代号：香", type: "二次元游戏",
-    tags: ["整理券", "伸手礼", "热门"], hasEgg: true, priority: true,
-    intro: "高热度互动点，适合早到后先确认整理券。",
-    egg: "整理券约 1500 张，问答预约卡约 300 张，并有伸手礼。",
-    steps: ["到 N2-G201 先询问整理券发放时间", "按整理券或预约卡时段参与问答/互动", "完成后凭规则领取伸手礼"],
-    requirements: "整理券和问答预约卡均可能快速发完，建议上午优先。",
-    note: "数量来自用户分享，现场若有调整以工作人员公告为准。",
+    venue: "N2", code: "N2-G201", name: "\u4ee3\u53f7\uff1a\u9999", type: "\u4e8c\u6b21\u5143\u6e38\u620f",
+    tags: ["\u6574\u7406\u5238", "\u4f38\u624b\u793c", "\u70ed\u95e8"], hasEgg: true, priority: true,
+    intro: "\u9ad8\u70ed\u5ea6\u4e92\u52a8\u70b9\uff0c\u9002\u5408\u65e9\u5230\u540e\u5148\u786e\u8ba4\u6574\u7406\u5238\u3002",
+    egg: "\u6574\u7406\u5238\u7ea6 1500 \u5f20\uff0c\u95ee\u7b54\u9884\u7ea6\u5361\u7ea6 300 \u5f20\uff0c\u5e76\u6709\u4f38\u624b\u793c\u3002",
+    steps: ["\u5230 N2-G201 \u5148\u8be2\u95ee\u6574\u7406\u5238\u53d1\u653e\u65f6\u95f4", "\u6309\u6574\u7406\u5238\u6216\u9884\u7ea6\u5361\u65f6\u6bb5\u53c2\u4e0e\u95ee\u7b54/\u4e92\u52a8", "\u5b8c\u6210\u540e\u51ed\u89c4\u5219\u9886\u53d6\u4f38\u624b\u793c"],
+    requirements: "\u6574\u7406\u5238\u548c\u95ee\u7b54\u9884\u7ea6\u5361\u5747\u53ef\u80fd\u5feb\u901f\u53d1\u5b8c\uff0c\u5efa\u8bae\u4e0a\u5348\u4f18\u5148\u3002",
+    note: "\u6570\u91cf\u6765\u81ea\u7528\u6237\u5206\u4eab\uff0c\u73b0\u573a\u82e5\u6709\u8c03\u6574\u4ee5\u5de5\u4f5c\u4eba\u5458\u516c\u544a\u4e3a\u51c6\u3002",
   },
   {
-    venue: "N3", code: "N3-01", name: "华为鸿蒙", type: "系统 / 游戏生态",
-    tags: ["鸿蒙", "任务", "移动电源"], hasEgg: true, priority: true,
-    intro: "适合普通观众低成本打卡，但移动电源库存存在不同说法。",
-    egg: "收集鸿蒙图鉴或完成任务，用户分享提到可领取移动电源。",
-    steps: ["到 N3-01 领取鸿蒙图鉴或任务卡", "按任务完成体验、互动或打卡", "到兑换处核验任务并领取礼品"],
-    requirements: "移动电源数量和兑换规则以现场为准，建议开场先问库存。",
-    note: "不同文章出现 1000 / 4500 份两种说法，页面按‘数量待核验’处理。",
+    venue: "N3", code: "N3-01", name: "\u534e\u4e3a\u9e3f\u8499", type: "\u7cfb\u7edf / \u6e38\u620f\u751f\u6001",
+    tags: ["\u9e3f\u8499", "\u4efb\u52a1", "\u79fb\u52a8\u7535\u6e90"], hasEgg: true, priority: true,
+    intro: "\u9002\u5408\u666e\u901a\u89c2\u4f17\u4f4e\u6210\u672c\u6253\u5361\uff0c\u4f46\u79fb\u52a8\u7535\u6e90\u5e93\u5b58\u5b58\u5728\u4e0d\u540c\u8bf4\u6cd5\u3002",
+    egg: "\u6536\u96c6\u9e3f\u8499\u56fe\u9274\u6216\u5b8c\u6210\u4efb\u52a1\uff0c\u7528\u6237\u5206\u4eab\u63d0\u5230\u53ef\u9886\u53d6\u79fb\u52a8\u7535\u6e90\u3002",
+    steps: ["\u5230 N3-01 \u9886\u53d6\u9e3f\u8499\u56fe\u9274\u6216\u4efb\u52a1\u5361", "\u6309\u4efb\u52a1\u5b8c\u6210\u4f53\u9a8c\u3001\u4e92\u52a8\u6216\u6253\u5361", "\u5230\u5151\u6362\u5904\u6838\u9a8c\u4efb\u52a1\u5e76\u9886\u53d6\u793c\u54c1"],
+    requirements: "\u79fb\u52a8\u7535\u6e90\u6570\u91cf\u548c\u5151\u6362\u89c4\u5219\u4ee5\u73b0\u573a\u4e3a\u51c6\uff0c\u5efa\u8bae\u5f00\u573a\u5148\u95ee\u5e93\u5b58\u3002",
+    note: "\u4e0d\u540c\u6587\u7ae0\u51fa\u73b0 1000 / 4500 \u4efd\u4e24\u79cd\u8bf4\u6cd5\uff0c\u9875\u9762\u6309\u2018\u6570\u91cf\u5f85\u6838\u9a8c\u2019\u5904\u7406\u3002",
   },
   {
-    venue: "N3", code: "N3-02", name: "网易游戏", type: "游戏",
-    tags: ["游戏", "试玩"], priority: true,
-    intro: "N3 游戏区重点厂商，可与暴雪和华为一起安排。",
-    egg: "试玩、舞台或互动赠品以当天活动安排为准。",
-    steps: ["到 N3-02 查看活动牌", "优先选择短时试玩或无需预约的项目", "完成互动后询问兑换点"],
-    requirements: "热门 IP 可能排队，建议先记录活动时间。",
-    note: "官方名单已核验，具体无料未在稳定来源中确认。",
+    venue: "N3", code: "N3-02", name: "\u7f51\u6613\u6e38\u620f", type: "\u6e38\u620f",
+    tags: ["\u6e38\u620f", "\u8bd5\u73a9"], priority: true,
+    intro: "N3 \u6e38\u620f\u533a\u91cd\u70b9\u5382\u5546\uff0c\u53ef\u4e0e\u66b4\u96ea\u548c\u534e\u4e3a\u4e00\u8d77\u5b89\u6392\u3002",
+    egg: "\u8bd5\u73a9\u3001\u821e\u53f0\u6216\u4e92\u52a8\u8d60\u54c1\u4ee5\u5f53\u5929\u6d3b\u52a8\u5b89\u6392\u4e3a\u51c6\u3002",
+    steps: ["\u5230 N3-02 \u67e5\u770b\u6d3b\u52a8\u724c", "\u4f18\u5148\u9009\u62e9\u77ed\u65f6\u8bd5\u73a9\u6216\u65e0\u9700\u9884\u7ea6\u7684\u9879\u76ee", "\u5b8c\u6210\u4e92\u52a8\u540e\u8be2\u95ee\u5151\u6362\u70b9"],
+    requirements: "\u70ed\u95e8 IP \u53ef\u80fd\u6392\u961f\uff0c\u5efa\u8bae\u5148\u8bb0\u5f55\u6d3b\u52a8\u65f6\u95f4\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\uff0c\u5177\u4f53\u65e0\u6599\u672a\u5728\u7a33\u5b9a\u6765\u6e90\u4e2d\u786e\u8ba4\u3002",
   },
   {
-    venue: "N3", code: "N3-03", name: "暴雪", type: "游戏",
-    tags: ["游戏", "热门"], priority: true,
-    intro: "热门游戏厂商，推荐错峰查看活动和周边。",
-    egg: "关注、拍照、发帖等活动可能对应纪念物料。",
-    steps: ["先询问是否有现场任务或打卡规则", "按要求关注、拍照或发布内容", "凭完成页面到兑换处领取"],
-    requirements: "部分用户分享提到每日海报 1000 份，库存以现场为准。",
-    note: "‘每日海报 1000 份’来自用户经验，其他周边不要默认保证。",
+    venue: "N3", code: "N3-03", name: "\u66b4\u96ea", type: "\u6e38\u620f",
+    tags: ["\u6e38\u620f", "\u70ed\u95e8"], priority: true,
+    intro: "\u70ed\u95e8\u6e38\u620f\u5382\u5546\uff0c\u63a8\u8350\u9519\u5cf0\u67e5\u770b\u6d3b\u52a8\u548c\u5468\u8fb9\u3002",
+    egg: "\u5173\u6ce8\u3001\u62cd\u7167\u3001\u53d1\u5e16\u7b49\u6d3b\u52a8\u53ef\u80fd\u5bf9\u5e94\u7eaa\u5ff5\u7269\u6599\u3002",
+    steps: ["\u5148\u8be2\u95ee\u662f\u5426\u6709\u73b0\u573a\u4efb\u52a1\u6216\u6253\u5361\u89c4\u5219", "\u6309\u8981\u6c42\u5173\u6ce8\u3001\u62cd\u7167\u6216\u53d1\u5e03\u5185\u5bb9", "\u51ed\u5b8c\u6210\u9875\u9762\u5230\u5151\u6362\u5904\u9886\u53d6"],
+    requirements: "\u90e8\u5206\u7528\u6237\u5206\u4eab\u63d0\u5230\u6bcf\u65e5\u6d77\u62a5 1000 \u4efd\uff0c\u5e93\u5b58\u4ee5\u73b0\u573a\u4e3a\u51c6\u3002",
+    note: "\u2018\u6bcf\u65e5\u6d77\u62a5 1000 \u4efd\u2019\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\uff0c\u5176\u4ed6\u5468\u8fb9\u4e0d\u8981\u9ed8\u8ba4\u4fdd\u8bc1\u3002",
   },
   {
-    venue: "N3", code: "N3-06", name: "HKC", type: "显示器 / 硬件",
-    tags: ["硬件", "显示器"], priority: true,
-    intro: "硬件偏好优先点，适合在人流较低时快速看产品。",
-    egg: "现场体验、拍照或互动礼品以活动牌为准。",
-    steps: ["到 N3-06 先看是否有签到/互动任务", "完成指定体验或打卡", "询问是否有每日限量礼品"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方展位信息已核验。",
+    venue: "N3", code: "N3-06", name: "HKC", type: "\u663e\u793a\u5668 / \u786c\u4ef6",
+    tags: ["\u786c\u4ef6", "\u663e\u793a\u5668"], priority: true,
+    intro: "\u786c\u4ef6\u504f\u597d\u4f18\u5148\u70b9\uff0c\u9002\u5408\u5728\u4eba\u6d41\u8f83\u4f4e\u65f6\u5feb\u901f\u770b\u4ea7\u54c1\u3002",
+    egg: "\u73b0\u573a\u4f53\u9a8c\u3001\u62cd\u7167\u6216\u4e92\u52a8\u793c\u54c1\u4ee5\u6d3b\u52a8\u724c\u4e3a\u51c6\u3002",
+    steps: ["\u5230 N3-06 \u5148\u770b\u662f\u5426\u6709\u7b7e\u5230/\u4e92\u52a8\u4efb\u52a1", "\u5b8c\u6210\u6307\u5b9a\u4f53\u9a8c\u6216\u6253\u5361", "\u8be2\u95ee\u662f\u5426\u6709\u6bcf\u65e5\u9650\u91cf\u793c\u54c1"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u5c55\u4f4d\u4fe1\u606f\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "N3", code: "N3-09", name: "我的花园世界", type: "游戏 / 生活方式",
-    tags: ["拍照打卡", "限定周边"], hasEgg: true,
-    intro: "轻量拍照点，适合错开大型展位后补充。",
-    egg: "拍照打卡，有机会获得鲜花和限定周边。",
-    steps: ["到 N3-09 找到拍照打卡点", "按现场要求完成拍照或发布", "向工作人员确认领取方式"],
-    requirements: "是‘有机会’而非固定发放，先问每日库存。",
-    note: "来自用户经验贴。",
+    venue: "N3", code: "N3-09", name: "\u6211\u7684\u82b1\u56ed\u4e16\u754c", type: "\u6e38\u620f / \u751f\u6d3b\u65b9\u5f0f",
+    tags: ["\u62cd\u7167\u6253\u5361", "\u9650\u5b9a\u5468\u8fb9"], hasEgg: true,
+    intro: "\u8f7b\u91cf\u62cd\u7167\u70b9\uff0c\u9002\u5408\u9519\u5f00\u5927\u578b\u5c55\u4f4d\u540e\u8865\u5145\u3002",
+    egg: "\u62cd\u7167\u6253\u5361\uff0c\u6709\u673a\u4f1a\u83b7\u5f97\u9c9c\u82b1\u548c\u9650\u5b9a\u5468\u8fb9\u3002",
+    steps: ["\u5230 N3-09 \u627e\u5230\u62cd\u7167\u6253\u5361\u70b9", "\u6309\u73b0\u573a\u8981\u6c42\u5b8c\u6210\u62cd\u7167\u6216\u53d1\u5e03", "\u5411\u5de5\u4f5c\u4eba\u5458\u786e\u8ba4\u9886\u53d6\u65b9\u5f0f"],
+    requirements: "\u662f\u2018\u6709\u673a\u4f1a\u2019\u800c\u975e\u56fa\u5b9a\u53d1\u653e\uff0c\u5148\u95ee\u6bcf\u65e5\u5e93\u5b58\u3002",
+    note: "\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\u3002",
   },
   {
-    venue: "N3", code: "N3-10", name: "峡谷争锋", type: "电竞游戏",
-    tags: ["集章", "扭蛋", "周边"], hasEgg: true,
-    intro: "任务较多，适合有时间完成一整套集章的观众。",
-    egg: "集章、PR 卡、吧唧、透扇、编织袋和扭蛋等。",
-    steps: ["到 N3-10 领取集章卡", "完成各互动点并集齐印章", "按集章结果兑换 PR 卡、吧唧或扭蛋"],
-    requirements: "不同奖励对应不同完成度，先确认兑换表和剩余库存。",
-    note: "物料清单来自用户经验贴，款式和数量可能变化。",
+    venue: "N3", code: "N3-10", name: "\u5ce1\u8c37\u4e89\u950b", type: "\u7535\u7ade\u6e38\u620f",
+    tags: ["\u96c6\u7ae0", "\u626d\u86cb", "\u5468\u8fb9"], hasEgg: true,
+    intro: "\u4efb\u52a1\u8f83\u591a\uff0c\u9002\u5408\u6709\u65f6\u95f4\u5b8c\u6210\u4e00\u6574\u5957\u96c6\u7ae0\u7684\u89c2\u4f17\u3002",
+    egg: "\u96c6\u7ae0\u3001PR \u5361\u3001\u5427\u5527\u3001\u900f\u6247\u3001\u7f16\u7ec7\u888b\u548c\u626d\u86cb\u7b49\u3002",
+    steps: ["\u5230 N3-10 \u9886\u53d6\u96c6\u7ae0\u5361", "\u5b8c\u6210\u5404\u4e92\u52a8\u70b9\u5e76\u96c6\u9f50\u5370\u7ae0", "\u6309\u96c6\u7ae0\u7ed3\u679c\u5151\u6362 PR \u5361\u3001\u5427\u5527\u6216\u626d\u86cb"],
+    requirements: "\u4e0d\u540c\u5956\u52b1\u5bf9\u5e94\u4e0d\u540c\u5b8c\u6210\u5ea6\uff0c\u5148\u786e\u8ba4\u5151\u6362\u8868\u548c\u5269\u4f59\u5e93\u5b58\u3002",
+    note: "\u7269\u6599\u6e05\u5355\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\uff0c\u6b3e\u5f0f\u548c\u6570\u91cf\u53ef\u80fd\u53d8\u5316\u3002",
   },
   {
-    venue: "N4", code: "N4-03", name: "腾讯 / 猫仙札", type: "游戏 / 二次元",
-    tags: ["腾讯", "二次元"], priority: true,
-    intro: "N4 重点内容，建议用作中段错峰点。",
-    egg: "活动、试玩和打卡物料以当天规则为准。",
-    steps: ["到 N4-03 查看活动牌", "优先处理短流程互动", "完成后询问领取窗口和库存"],
-    requirements: "热门项目可能有时段限制。",
-    note: "官方名单已核验，暂未确认固定物料。",
+    venue: "N4", code: "N4-03", name: "\u817e\u8baf / \u732b\u4ed9\u672d", type: "\u6e38\u620f / \u4e8c\u6b21\u5143",
+    tags: ["\u817e\u8baf", "\u4e8c\u6b21\u5143"], priority: true,
+    intro: "N4 \u91cd\u70b9\u5185\u5bb9\uff0c\u5efa\u8bae\u7528\u4f5c\u4e2d\u6bb5\u9519\u5cf0\u70b9\u3002",
+    egg: "\u6d3b\u52a8\u3001\u8bd5\u73a9\u548c\u6253\u5361\u7269\u6599\u4ee5\u5f53\u5929\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u5230 N4-03 \u67e5\u770b\u6d3b\u52a8\u724c", "\u4f18\u5148\u5904\u7406\u77ed\u6d41\u7a0b\u4e92\u52a8", "\u5b8c\u6210\u540e\u8be2\u95ee\u9886\u53d6\u7a97\u53e3\u548c\u5e93\u5b58"],
+    requirements: "\u70ed\u95e8\u9879\u76ee\u53ef\u80fd\u6709\u65f6\u6bb5\u9650\u5236\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\uff0c\u6682\u672a\u786e\u8ba4\u56fa\u5b9a\u7269\u6599\u3002",
   },
   {
-    venue: "N4", code: "N4-05", name: "咪咕", type: "游戏 / 内容",
-    tags: ["游戏", "内容"],
-    intro: "N4 可顺路查看的内容展位。",
-    egg: "现场互动礼品以展位公告为准。",
-    steps: ["询问当日互动", "按要求完成体验或打卡", "现场确认兑换方式"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方名单已核验。",
+    venue: "N4", code: "N4-05", name: "\u54aa\u5495", type: "\u6e38\u620f / \u5185\u5bb9",
+    tags: ["\u6e38\u620f", "\u5185\u5bb9"],
+    intro: "N4 \u53ef\u987a\u8def\u67e5\u770b\u7684\u5185\u5bb9\u5c55\u4f4d\u3002",
+    egg: "\u73b0\u573a\u4e92\u52a8\u793c\u54c1\u4ee5\u5c55\u4f4d\u516c\u544a\u4e3a\u51c6\u3002",
+    steps: ["\u8be2\u95ee\u5f53\u65e5\u4e92\u52a8", "\u6309\u8981\u6c42\u5b8c\u6210\u4f53\u9a8c\u6216\u6253\u5361", "\u73b0\u573a\u786e\u8ba4\u5151\u6362\u65b9\u5f0f"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "N5", code: "N5-03", name: "一加", type: "手机 / 硬件",
-    tags: ["硬件", "电竞"], priority: true,
-    intro: "N5 硬件向重点，建议与红魔安排成一组。",
-    egg: "签到、互动和体验礼品以现场规则为准。",
-    steps: ["到 N5-03 查看体验区任务", "完成指定互动或产品体验", "询问礼品领取点"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方名单已核验。",
+    venue: "N5", code: "N5-03", name: "\u4e00\u52a0", type: "\u624b\u673a / \u786c\u4ef6",
+    tags: ["\u786c\u4ef6", "\u7535\u7ade"], priority: true,
+    intro: "N5 \u786c\u4ef6\u5411\u91cd\u70b9\uff0c\u5efa\u8bae\u4e0e\u7ea2\u9b54\u5b89\u6392\u6210\u4e00\u7ec4\u3002",
+    egg: "\u7b7e\u5230\u3001\u4e92\u52a8\u548c\u4f53\u9a8c\u793c\u54c1\u4ee5\u73b0\u573a\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u5230 N5-03 \u67e5\u770b\u4f53\u9a8c\u533a\u4efb\u52a1", "\u5b8c\u6210\u6307\u5b9a\u4e92\u52a8\u6216\u4ea7\u54c1\u4f53\u9a8c", "\u8be2\u95ee\u793c\u54c1\u9886\u53d6\u70b9"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "N5", code: "N5-08", name: "红魔", type: "电竞硬件",
-    tags: ["硬件", "电竞", "热门"], priority: true,
-    intro: "适合硬件偏好用户，热门时段建议避开。",
-    egg: "产品体验、挑战或拍照打卡礼品以当天规则为准。",
-    steps: ["到 N5-08 先问是否需要排队", "完成短流程体验或挑战", "按完成结果领取礼品"],
-    requirements: "可能存在排队和限量，建议下午错峰。",
-    note: "官方名单已核验。",
+    venue: "N5", code: "N5-08", name: "\u7ea2\u9b54", type: "\u7535\u7ade\u786c\u4ef6",
+    tags: ["\u786c\u4ef6", "\u7535\u7ade", "\u70ed\u95e8"], priority: true,
+    intro: "\u9002\u5408\u786c\u4ef6\u504f\u597d\u7528\u6237\uff0c\u70ed\u95e8\u65f6\u6bb5\u5efa\u8bae\u907f\u5f00\u3002",
+    egg: "\u4ea7\u54c1\u4f53\u9a8c\u3001\u6311\u6218\u6216\u62cd\u7167\u6253\u5361\u793c\u54c1\u4ee5\u5f53\u5929\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u5230 N5-08 \u5148\u95ee\u662f\u5426\u9700\u8981\u6392\u961f", "\u5b8c\u6210\u77ed\u6d41\u7a0b\u4f53\u9a8c\u6216\u6311\u6218", "\u6309\u5b8c\u6210\u7ed3\u679c\u9886\u53d6\u793c\u54c1"],
+    requirements: "\u53ef\u80fd\u5b58\u5728\u6392\u961f\u548c\u9650\u91cf\uff0c\u5efa\u8bae\u4e0b\u5348\u9519\u5cf0\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E3", code: "E3-CA304", name: "Wink", type: "潮流生活",
-    tags: ["二次元", "拍照"], priority: true,
-    intro: "E3 轻量打卡点，可放在 E 馆后半程。",
-    egg: "拍照、互动或关注活动以现场公告为准。",
-    steps: ["到 E3-CA304 确认当日打卡任务", "完成拍照或互动", "询问是否有即时领取物料"],
-    requirements: "暂无稳定的具体物料清单。",
-    note: "官方名单已核验。",
+    venue: "E3", code: "E3-CA304", name: "Wink", type: "\u6f6e\u6d41\u751f\u6d3b",
+    tags: ["\u4e8c\u6b21\u5143", "\u62cd\u7167"], priority: true,
+    intro: "E3 \u8f7b\u91cf\u6253\u5361\u70b9\uff0c\u53ef\u653e\u5728 E \u9986\u540e\u534a\u7a0b\u3002",
+    egg: "\u62cd\u7167\u3001\u4e92\u52a8\u6216\u5173\u6ce8\u6d3b\u52a8\u4ee5\u73b0\u573a\u516c\u544a\u4e3a\u51c6\u3002",
+    steps: ["\u5230 E3-CA304 \u786e\u8ba4\u5f53\u65e5\u6253\u5361\u4efb\u52a1", "\u5b8c\u6210\u62cd\u7167\u6216\u4e92\u52a8", "\u8be2\u95ee\u662f\u5426\u6709\u5373\u65f6\u9886\u53d6\u7269\u6599"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u7269\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E4", code: "E4-M001", name: "索尼影像", type: "摄影 / 硬件",
-    tags: ["Sony", "摄影", "硬件"], priority: true,
-    intro: "摄影向重点展位，也适合 PlayStation 用户顺便比较 Sony 生态。",
-    egg: "体验和打卡物料以现场活动为准。",
-    steps: ["到 E4-M001 查看体验和打卡规则", "完成指定体验或拍摄任务", "询问是否有兑换物料"],
-    requirements: "热门设备体验可能排队。",
-    note: "官方名单已核验。",
+    venue: "E4", code: "E4-M001", name: "\u7d22\u5c3c\u5f71\u50cf", type: "\u6444\u5f71 / \u786c\u4ef6",
+    tags: ["Sony", "\u6444\u5f71", "\u786c\u4ef6"], priority: true,
+    intro: "\u6444\u5f71\u5411\u91cd\u70b9\u5c55\u4f4d\uff0c\u4e5f\u9002\u5408 PlayStation \u7528\u6237\u987a\u4fbf\u6bd4\u8f83 Sony \u751f\u6001\u3002",
+    egg: "\u4f53\u9a8c\u548c\u6253\u5361\u7269\u6599\u4ee5\u73b0\u573a\u6d3b\u52a8\u4e3a\u51c6\u3002",
+    steps: ["\u5230 E4-M001 \u67e5\u770b\u4f53\u9a8c\u548c\u6253\u5361\u89c4\u5219", "\u5b8c\u6210\u6307\u5b9a\u4f53\u9a8c\u6216\u62cd\u6444\u4efb\u52a1", "\u8be2\u95ee\u662f\u5426\u6709\u5151\u6362\u7269\u6599"],
+    requirements: "\u70ed\u95e8\u8bbe\u5907\u4f53\u9a8c\u53ef\u80fd\u6392\u961f\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E4", code: "E4-M306", name: "Polaroid", type: "摄影 / 生活方式",
-    tags: ["摄影", "拍照"],
-    intro: "轻量摄影打卡点，可在 E4 顺路查看。",
-    egg: "拍照或互动赠品以现场为准。",
-    steps: ["确认是否有现场拍摄体验", "完成互动或拍照", "到兑换处确认礼品"],
-    requirements: "暂无稳定的具体物料清单。",
-    note: "官方名单已核验。",
+    venue: "E4", code: "E4-M306", name: "Polaroid", type: "\u6444\u5f71 / \u751f\u6d3b\u65b9\u5f0f",
+    tags: ["\u6444\u5f71", "\u62cd\u7167"],
+    intro: "\u8f7b\u91cf\u6444\u5f71\u6253\u5361\u70b9\uff0c\u53ef\u5728 E4 \u987a\u8def\u67e5\u770b\u3002",
+    egg: "\u62cd\u7167\u6216\u4e92\u52a8\u8d60\u54c1\u4ee5\u73b0\u573a\u4e3a\u51c6\u3002",
+    steps: ["\u786e\u8ba4\u662f\u5426\u6709\u73b0\u573a\u62cd\u6444\u4f53\u9a8c", "\u5b8c\u6210\u4e92\u52a8\u6216\u62cd\u7167", "\u5230\u5151\u6362\u5904\u786e\u8ba4\u793c\u54c1"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u7269\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E5", code: "E5-FM102", name: "淘天潮玩", type: "潮玩 / 模玩",
-    tags: ["集章", "扭蛋", "热门"], hasEgg: true, priority: true,
-    intro: "物料记录明确，但互动点较多，适合预留完整时间。",
-    egg: "4 个互动集章，抽限定扭蛋，现场有 3 万+周边。",
-    steps: ["到 E5-FM102 领取集章说明", "完成 4 个互动并集齐印章", "按规则抽限定扭蛋或兑换周边"],
-    requirements: "不同互动和奖品可能有每日上限，先确认兑换时间。",
-    note: "数量来自用户经验贴，‘3 万+’不代表每种周边都充足。",
+    venue: "E5", code: "E5-FM102", name: "\u6dd8\u5929\u6f6e\u73a9", type: "\u6f6e\u73a9 / \u6a21\u73a9",
+    tags: ["\u96c6\u7ae0", "\u626d\u86cb", "\u70ed\u95e8"], hasEgg: true, priority: true,
+    intro: "\u7269\u6599\u8bb0\u5f55\u660e\u786e\uff0c\u4f46\u4e92\u52a8\u70b9\u8f83\u591a\uff0c\u9002\u5408\u9884\u7559\u5b8c\u6574\u65f6\u95f4\u3002",
+    egg: "4 \u4e2a\u4e92\u52a8\u96c6\u7ae0\uff0c\u62bd\u9650\u5b9a\u626d\u86cb\uff0c\u73b0\u573a\u6709 3 \u4e07+\u5468\u8fb9\u3002",
+    steps: ["\u5230 E5-FM102 \u9886\u53d6\u96c6\u7ae0\u8bf4\u660e", "\u5b8c\u6210 4 \u4e2a\u4e92\u52a8\u5e76\u96c6\u9f50\u5370\u7ae0", "\u6309\u89c4\u5219\u62bd\u9650\u5b9a\u626d\u86cb\u6216\u5151\u6362\u5468\u8fb9"],
+    requirements: "\u4e0d\u540c\u4e92\u52a8\u548c\u5956\u54c1\u53ef\u80fd\u6709\u6bcf\u65e5\u4e0a\u9650\uff0c\u5148\u786e\u8ba4\u5151\u6362\u65f6\u95f4\u3002",
+    note: "\u6570\u91cf\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\uff0c\u20183 \u4e07+\u2019\u4e0d\u4ee3\u8868\u6bcf\u79cd\u5468\u8fb9\u90fd\u5145\u8db3\u3002",
   },
   {
-    venue: "E6", code: "E6-E001", name: "维信诺", type: "显示 / 硬件",
-    tags: ["硬件", "显示"], priority: true,
-    intro: "E6 硬件区可快速浏览的显示技术展位。",
-    egg: "互动和体验礼品以展位规则为准。",
-    steps: ["查看是否有签到或体验任务", "完成任务", "确认限量物料领取方式"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方名单已核验。",
+    venue: "E6", code: "E6-E001", name: "\u7ef4\u4fe1\u8bfa", type: "\u663e\u793a / \u786c\u4ef6",
+    tags: ["\u786c\u4ef6", "\u663e\u793a"], priority: true,
+    intro: "E6 \u786c\u4ef6\u533a\u53ef\u5feb\u901f\u6d4f\u89c8\u7684\u663e\u793a\u6280\u672f\u5c55\u4f4d\u3002",
+    egg: "\u4e92\u52a8\u548c\u4f53\u9a8c\u793c\u54c1\u4ee5\u5c55\u4f4d\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u67e5\u770b\u662f\u5426\u6709\u7b7e\u5230\u6216\u4f53\u9a8c\u4efb\u52a1", "\u5b8c\u6210\u4efb\u52a1", "\u786e\u8ba4\u9650\u91cf\u7269\u6599\u9886\u53d6\u65b9\u5f0f"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E6", code: "E6-E002", name: "Sony INZONE", type: "电竞硬件",
-    tags: ["Sony", "硬件", "优先"], priority: true,
-    intro: "硬件和 Sony 偏好交叉目标，建议在人流低时体验。",
-    egg: "试玩、拍照或互动礼品以现场规则为准。",
-    steps: ["到 E6-E002 确认体验排队规则", "完成耳机/显示设备体验", "询问是否有现场兑换物料"],
-    requirements: "体验区可能排队，先处理无需排队项目。",
-    note: "官方名单已核验。",
+    venue: "E6", code: "E6-E002", name: "Sony INZONE", type: "\u7535\u7ade\u786c\u4ef6",
+    tags: ["Sony", "\u786c\u4ef6", "\u4f18\u5148"], priority: true,
+    intro: "\u786c\u4ef6\u548c Sony \u504f\u597d\u4ea4\u53c9\u76ee\u6807\uff0c\u5efa\u8bae\u5728\u4eba\u6d41\u4f4e\u65f6\u4f53\u9a8c\u3002",
+    egg: "\u8bd5\u73a9\u3001\u62cd\u7167\u6216\u4e92\u52a8\u793c\u54c1\u4ee5\u73b0\u573a\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u5230 E6-E002 \u786e\u8ba4\u4f53\u9a8c\u6392\u961f\u89c4\u5219", "\u5b8c\u6210\u8033\u673a/\u663e\u793a\u8bbe\u5907\u4f53\u9a8c", "\u8be2\u95ee\u662f\u5426\u6709\u73b0\u573a\u5151\u6362\u7269\u6599"],
+    requirements: "\u4f53\u9a8c\u533a\u53ef\u80fd\u6392\u961f\uff0c\u5148\u5904\u7406\u65e0\u9700\u6392\u961f\u9879\u76ee\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E6", code: "E6-E003", name: "傲风", type: "电竞家具",
-    tags: ["硬件", "桌搭"], priority: true,
-    intro: "适合硬件用户顺路看电竞椅和桌面设备。",
-    egg: "互动、拍照或抽奖活动以现场公告为准。",
-    steps: ["到 E6-E003 查看当日互动", "完成体验或拍照任务", "向工作人员确认领取/抽奖条件"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方名单已核验。",
+    venue: "E6", code: "E6-E003", name: "\u50b2\u98ce", type: "\u7535\u7ade\u5bb6\u5177",
+    tags: ["\u786c\u4ef6", "\u684c\u642d"], priority: true,
+    intro: "\u9002\u5408\u786c\u4ef6\u7528\u6237\u987a\u8def\u770b\u7535\u7ade\u6905\u548c\u684c\u9762\u8bbe\u5907\u3002",
+    egg: "\u4e92\u52a8\u3001\u62cd\u7167\u6216\u62bd\u5956\u6d3b\u52a8\u4ee5\u73b0\u573a\u516c\u544a\u4e3a\u51c6\u3002",
+    steps: ["\u5230 E6-E003 \u67e5\u770b\u5f53\u65e5\u4e92\u52a8", "\u5b8c\u6210\u4f53\u9a8c\u6216\u62cd\u7167\u4efb\u52a1", "\u5411\u5de5\u4f5c\u4eba\u5458\u786e\u8ba4\u9886\u53d6/\u62bd\u5956\u6761\u4ef6"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E6", code: "E6-E096", name: "HiBy", type: "音频 / 硬件",
-    tags: ["初音", "吧唧", "立牌"], hasEgg: true, priority: true,
-    intro: "二次元和硬件交叉目标，流程清晰，建议优先处理。",
-    egg: "拍初音 M500，带 #HiByChinaJoy2026 发帖，可换吧唧和立牌。",
-    steps: ["到 E6-E096 找到初音 M500 展示点", "拍照并发布带 #HiByChinaJoy2026 的帖子", "向工作人员出示帖子，兑换吧唧和立牌"],
-    requirements: "先确认平台、帖子可见性和每日兑换库存。",
-    note: "来自用户经验贴；话题和物料以现场核验为准。",
+    venue: "E6", code: "E6-E096", name: "HiBy", type: "\u97f3\u9891 / \u786c\u4ef6",
+    tags: ["\u521d\u97f3", "\u5427\u5527", "\u7acb\u724c"], hasEgg: true, priority: true,
+    intro: "\u4e8c\u6b21\u5143\u548c\u786c\u4ef6\u4ea4\u53c9\u76ee\u6807\uff0c\u6d41\u7a0b\u6e05\u6670\uff0c\u5efa\u8bae\u4f18\u5148\u5904\u7406\u3002",
+    egg: "\u62cd\u521d\u97f3 M500\uff0c\u5e26 #HiByChinaJoy2026 \u53d1\u5e16\uff0c\u53ef\u6362\u5427\u5527\u548c\u7acb\u724c\u3002",
+    steps: ["\u5230 E6-E096 \u627e\u5230\u521d\u97f3 M500 \u5c55\u793a\u70b9", "\u62cd\u7167\u5e76\u53d1\u5e03\u5e26 #HiByChinaJoy2026 \u7684\u5e16\u5b50", "\u5411\u5de5\u4f5c\u4eba\u5458\u51fa\u793a\u5e16\u5b50\uff0c\u5151\u6362\u5427\u5527\u548c\u7acb\u724c"],
+    requirements: "\u5148\u786e\u8ba4\u5e73\u53f0\u3001\u5e16\u5b50\u53ef\u89c1\u6027\u548c\u6bcf\u65e5\u5151\u6362\u5e93\u5b58\u3002",
+    note: "\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\uff1b\u8bdd\u9898\u548c\u7269\u6599\u4ee5\u73b0\u573a\u6838\u9a8c\u4e3a\u51c6\u3002",
   },
   {
-    venue: "E6", code: "E6-E101", name: "VGN", type: "键鼠 / 硬件",
-    tags: ["键鼠", "硬件"], priority: true,
-    intro: "键鼠硬件重点展位，适合快速试用和比较。",
-    egg: "互动抽奖或体验礼品以现场规则为准。",
-    steps: ["到 E6-E101 先确认是否有签到礼", "完成产品体验或互动", "按规则领取或参与抽奖"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方名单已核验。",
+    venue: "E6", code: "E6-E101", name: "VGN", type: "\u952e\u9f20 / \u786c\u4ef6",
+    tags: ["\u952e\u9f20", "\u786c\u4ef6"], priority: true,
+    intro: "\u952e\u9f20\u786c\u4ef6\u91cd\u70b9\u5c55\u4f4d\uff0c\u9002\u5408\u5feb\u901f\u8bd5\u7528\u548c\u6bd4\u8f83\u3002",
+    egg: "\u4e92\u52a8\u62bd\u5956\u6216\u4f53\u9a8c\u793c\u54c1\u4ee5\u73b0\u573a\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u5230 E6-E101 \u5148\u786e\u8ba4\u662f\u5426\u6709\u7b7e\u5230\u793c", "\u5b8c\u6210\u4ea7\u54c1\u4f53\u9a8c\u6216\u4e92\u52a8", "\u6309\u89c4\u5219\u9886\u53d6\u6216\u53c2\u4e0e\u62bd\u5956"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E6", code: "E6-E201", name: "OneXPlayer", type: "掌机 / 硬件",
-    tags: ["掌机", "挑战赛", "高价值"], hasEgg: true, priority: true,
-    intro: "硬件高价值目标，挑战赛奖品门槛高但值得关注。",
-    egg: "黑神话挑战赛，TOP10 有 DJI Air 3S。",
-    steps: ["到 E6-E201 询问挑战赛报名和场次", "完成黑神话挑战并确认成绩", "若进入 TOP10，按工作人员流程登记领奖"],
-    requirements: "TOP10 属于高难度竞争奖励，不应当作稳定到手物料。",
-    note: "来自用户分享；奖品和排名规则需现场确认。",
+    venue: "E6", code: "E6-E201", name: "OneXPlayer", type: "\u638c\u673a / \u786c\u4ef6",
+    tags: ["\u638c\u673a", "\u6311\u6218\u8d5b", "\u9ad8\u4ef7\u503c"], hasEgg: true, priority: true,
+    intro: "\u786c\u4ef6\u9ad8\u4ef7\u503c\u76ee\u6807\uff0c\u6311\u6218\u8d5b\u5956\u54c1\u95e8\u69db\u9ad8\u4f46\u503c\u5f97\u5173\u6ce8\u3002",
+    egg: "\u9ed1\u795e\u8bdd\u6311\u6218\u8d5b\uff0cTOP10 \u6709 DJI Air 3S\u3002",
+    steps: ["\u5230 E6-E201 \u8be2\u95ee\u6311\u6218\u8d5b\u62a5\u540d\u548c\u573a\u6b21", "\u5b8c\u6210\u9ed1\u795e\u8bdd\u6311\u6218\u5e76\u786e\u8ba4\u6210\u7ee9", "\u82e5\u8fdb\u5165 TOP10\uff0c\u6309\u5de5\u4f5c\u4eba\u5458\u6d41\u7a0b\u767b\u8bb0\u9886\u5956"],
+    requirements: "TOP10 \u5c5e\u4e8e\u9ad8\u96be\u5ea6\u7ade\u4e89\u5956\u52b1\uff0c\u4e0d\u5e94\u5f53\u4f5c\u7a33\u5b9a\u5230\u624b\u7269\u6599\u3002",
+    note: "\u6765\u81ea\u7528\u6237\u5206\u4eab\uff1b\u5956\u54c1\u548c\u6392\u540d\u89c4\u5219\u9700\u73b0\u573a\u786e\u8ba4\u3002",
   },
   {
-    venue: "E6", code: "E6-E506", name: "绿联", type: "数码配件",
-    tags: ["硬件", "发帖", "抽奖"], hasEgg: true,
-    intro: "流程偏关注和发帖，适合在 E6 末段顺路处理。",
-    egg: "关注、发帖、互动后参与抽奖。",
-    steps: ["关注官方账号", "完成现场互动并发布指定内容", "出示完成页面，按规则参与抽奖"],
-    requirements: "抽奖不是固定赠品，确认活动时间和每日次数。",
-    note: "来自用户经验贴。",
+    venue: "E6", code: "E6-E506", name: "\u7eff\u8054", type: "\u6570\u7801\u914d\u4ef6",
+    tags: ["\u786c\u4ef6", "\u53d1\u5e16", "\u62bd\u5956"], hasEgg: true,
+    intro: "\u6d41\u7a0b\u504f\u5173\u6ce8\u548c\u53d1\u5e16\uff0c\u9002\u5408\u5728 E6 \u672b\u6bb5\u987a\u8def\u5904\u7406\u3002",
+    egg: "\u5173\u6ce8\u3001\u53d1\u5e16\u3001\u4e92\u52a8\u540e\u53c2\u4e0e\u62bd\u5956\u3002",
+    steps: ["\u5173\u6ce8\u5b98\u65b9\u8d26\u53f7", "\u5b8c\u6210\u73b0\u573a\u4e92\u52a8\u5e76\u53d1\u5e03\u6307\u5b9a\u5185\u5bb9", "\u51fa\u793a\u5b8c\u6210\u9875\u9762\uff0c\u6309\u89c4\u5219\u53c2\u4e0e\u62bd\u5956"],
+    requirements: "\u62bd\u5956\u4e0d\u662f\u56fa\u5b9a\u8d60\u54c1\uff0c\u786e\u8ba4\u6d3b\u52a8\u65f6\u95f4\u548c\u6bcf\u65e5\u6b21\u6570\u3002",
+    note: "\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\u3002",
   },
   {
-    venue: "E6", code: "E6-EDC01", name: "AULUMU", type: "桌搭 / 数码配件",
-    tags: ["打卡", "进群", "抽 Apple Watch"], hasEgg: true, priority: true,
-    intro: "任务步骤较多，建议在人流低的时段一次完成。",
-    egg: "打卡、关注、进群、发帖后抽 Apple Watch。",
-    steps: ["完成现场打卡", "关注账号并加入指定群", "发布指定内容，出示凭证参与抽奖"],
-    requirements: "Apple Watch 属于抽奖结果，不是完成任务必得。",
-    note: "来自用户经验贴。",
+    venue: "E6", code: "E6-EDC01", name: "AULUMU", type: "\u684c\u642d / \u6570\u7801\u914d\u4ef6",
+    tags: ["\u6253\u5361", "\u8fdb\u7fa4", "\u62bd Apple Watch"], hasEgg: true, priority: true,
+    intro: "\u4efb\u52a1\u6b65\u9aa4\u8f83\u591a\uff0c\u5efa\u8bae\u5728\u4eba\u6d41\u4f4e\u7684\u65f6\u6bb5\u4e00\u6b21\u5b8c\u6210\u3002",
+    egg: "\u6253\u5361\u3001\u5173\u6ce8\u3001\u8fdb\u7fa4\u3001\u53d1\u5e16\u540e\u62bd Apple Watch\u3002",
+    steps: ["\u5b8c\u6210\u73b0\u573a\u6253\u5361", "\u5173\u6ce8\u8d26\u53f7\u5e76\u52a0\u5165\u6307\u5b9a\u7fa4", "\u53d1\u5e03\u6307\u5b9a\u5185\u5bb9\uff0c\u51fa\u793a\u51ed\u8bc1\u53c2\u4e0e\u62bd\u5956"],
+    requirements: "Apple Watch \u5c5e\u4e8e\u62bd\u5956\u7ed3\u679c\uff0c\u4e0d\u662f\u5b8c\u6210\u4efb\u52a1\u5fc5\u5f97\u3002",
+    note: "\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\u3002",
   },
   {
-    venue: "E7", code: "E7-S201", name: "迈从", type: "键鼠 / 硬件",
-    tags: ["硬件", "键鼠"], priority: true,
-    intro: "E7 硬件区可快速体验的键鼠品牌。",
-    egg: "互动、试玩或抽奖以现场公告为准。",
-    steps: ["确认当日活动", "完成体验或互动", "询问领取或抽奖条件"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方名单已核验。",
+    venue: "E7", code: "E7-S201", name: "\u8fc8\u4ece", type: "\u952e\u9f20 / \u786c\u4ef6",
+    tags: ["\u786c\u4ef6", "\u952e\u9f20"], priority: true,
+    intro: "E7 \u786c\u4ef6\u533a\u53ef\u5feb\u901f\u4f53\u9a8c\u7684\u952e\u9f20\u54c1\u724c\u3002",
+    egg: "\u4e92\u52a8\u3001\u8bd5\u73a9\u6216\u62bd\u5956\u4ee5\u73b0\u573a\u516c\u544a\u4e3a\u51c6\u3002",
+    steps: ["\u786e\u8ba4\u5f53\u65e5\u6d3b\u52a8", "\u5b8c\u6210\u4f53\u9a8c\u6216\u4e92\u52a8", "\u8be2\u95ee\u9886\u53d6\u6216\u62bd\u5956\u6761\u4ef6"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E7", code: "E7-S602", name: "前行者", type: "键鼠 / 硬件",
-    tags: ["关注", "打卡", "刮刮乐"], hasEgg: true, priority: true,
-    intro: "流程短，适合作为 E7 的低成本收尾点。",
-    egg: "关注、打卡后参与刮刮乐。",
-    steps: ["关注前行者官方账号", "完成展位打卡", "凭完成页面参与刮刮乐"],
-    requirements: "奖品随机，先确认刮刮乐每日库存。",
-    note: "来自用户经验贴。",
+    venue: "E7", code: "E7-S602", name: "\u524d\u884c\u8005", type: "\u952e\u9f20 / \u786c\u4ef6",
+    tags: ["\u5173\u6ce8", "\u6253\u5361", "\u522e\u522e\u4e50"], hasEgg: true, priority: true,
+    intro: "\u6d41\u7a0b\u77ed\uff0c\u9002\u5408\u4f5c\u4e3a E7 \u7684\u4f4e\u6210\u672c\u6536\u5c3e\u70b9\u3002",
+    egg: "\u5173\u6ce8\u3001\u6253\u5361\u540e\u53c2\u4e0e\u522e\u522e\u4e50\u3002",
+    steps: ["\u5173\u6ce8\u524d\u884c\u8005\u5b98\u65b9\u8d26\u53f7", "\u5b8c\u6210\u5c55\u4f4d\u6253\u5361", "\u51ed\u5b8c\u6210\u9875\u9762\u53c2\u4e0e\u522e\u522e\u4e50"],
+    requirements: "\u5956\u54c1\u968f\u673a\uff0c\u5148\u786e\u8ba4\u522e\u522e\u4e50\u6bcf\u65e5\u5e93\u5b58\u3002",
+    note: "\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\u3002",
   },
   {
-    venue: "E7", code: "E7-S603-1", name: "黑鲨", type: "电竞硬件",
-    tags: ["硬件", "电竞"], priority: true,
-    intro: "E7 电竞硬件重点，建议避开人流峰值。",
-    egg: "体验、挑战或拍照礼品以现场规则为准。",
-    steps: ["确认是否需要排队或预约", "完成指定体验/挑战", "按规则领取礼品"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方名单已核验。",
+    venue: "E7", code: "E7-S603-1", name: "\u9ed1\u9ca8", type: "\u7535\u7ade\u786c\u4ef6",
+    tags: ["\u786c\u4ef6", "\u7535\u7ade"], priority: true,
+    intro: "E7 \u7535\u7ade\u786c\u4ef6\u91cd\u70b9\uff0c\u5efa\u8bae\u907f\u5f00\u4eba\u6d41\u5cf0\u503c\u3002",
+    egg: "\u4f53\u9a8c\u3001\u6311\u6218\u6216\u62cd\u7167\u793c\u54c1\u4ee5\u73b0\u573a\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u786e\u8ba4\u662f\u5426\u9700\u8981\u6392\u961f\u6216\u9884\u7ea6", "\u5b8c\u6210\u6307\u5b9a\u4f53\u9a8c/\u6311\u6218", "\u6309\u89c4\u5219\u9886\u53d6\u793c\u54c1"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E7", code: "E7-S802", name: "达尔优", type: "键鼠 / 硬件",
-    tags: ["硬件", "键鼠"], priority: true,
-    intro: "与迈从、前行者同区，可连续浏览。",
-    egg: "互动、体验和抽奖以现场规则为准。",
-    steps: ["查看当日互动牌", "完成体验或打卡", "确认兑换/抽奖时间"],
-    requirements: "暂无稳定的具体无料清单。",
-    note: "官方名单已核验。",
+    venue: "E7", code: "E7-S802", name: "\u8fbe\u5c14\u4f18", type: "\u952e\u9f20 / \u786c\u4ef6",
+    tags: ["\u786c\u4ef6", "\u952e\u9f20"], priority: true,
+    intro: "\u4e0e\u8fc8\u4ece\u3001\u524d\u884c\u8005\u540c\u533a\uff0c\u53ef\u8fde\u7eed\u6d4f\u89c8\u3002",
+    egg: "\u4e92\u52a8\u3001\u4f53\u9a8c\u548c\u62bd\u5956\u4ee5\u73b0\u573a\u89c4\u5219\u4e3a\u51c6\u3002",
+    steps: ["\u67e5\u770b\u5f53\u65e5\u4e92\u52a8\u724c", "\u5b8c\u6210\u4f53\u9a8c\u6216\u6253\u5361", "\u786e\u8ba4\u5151\u6362/\u62bd\u5956\u65f6\u95f4"],
+    requirements: "\u6682\u65e0\u7a33\u5b9a\u7684\u5177\u4f53\u65e0\u6599\u6e05\u5355\u3002",
+    note: "\u5b98\u65b9\u540d\u5355\u5df2\u6838\u9a8c\u3002",
   },
   {
-    venue: "E7", code: "E7-S807", name: "松能 X", type: "电竞家具",
-    tags: ["四品牌集章", "电竞椅", "3D 打印机"], hasEgg: true, priority: true,
-    intro: "集章截止时间早，必须在上午或中午前处理。",
-    egg: "四品牌集章，13:00 截止，可抽电竞椅、3D 打印机、支架。",
-    steps: ["到 E7-S807 领取四品牌集章规则", "在 13:00 前完成四品牌集章", "按规则参与抽奖或兑换支架"],
-    requirements: "13:00 是关键截止点；大型奖品属于抽奖，不是必得。",
-    note: "来自用户经验贴，现场可能调整截止时间。",
+    venue: "E7", code: "E7-S807", name: "\u677e\u80fd X", type: "\u7535\u7ade\u5bb6\u5177",
+    tags: ["\u56db\u54c1\u724c\u96c6\u7ae0", "\u7535\u7ade\u6905", "3D \u6253\u5370\u673a"], hasEgg: true, priority: true,
+    intro: "\u96c6\u7ae0\u622a\u6b62\u65f6\u95f4\u65e9\uff0c\u5fc5\u987b\u5728\u4e0a\u5348\u6216\u4e2d\u5348\u524d\u5904\u7406\u3002",
+    egg: "\u56db\u54c1\u724c\u96c6\u7ae0\uff0c13:00 \u622a\u6b62\uff0c\u53ef\u62bd\u7535\u7ade\u6905\u30013D \u6253\u5370\u673a\u3001\u652f\u67b6\u3002",
+    steps: ["\u5230 E7-S807 \u9886\u53d6\u56db\u54c1\u724c\u96c6\u7ae0\u89c4\u5219", "\u5728 13:00 \u524d\u5b8c\u6210\u56db\u54c1\u724c\u96c6\u7ae0", "\u6309\u89c4\u5219\u53c2\u4e0e\u62bd\u5956\u6216\u5151\u6362\u652f\u67b6"],
+    requirements: "13:00 \u662f\u5173\u952e\u622a\u6b62\u70b9\uff1b\u5927\u578b\u5956\u54c1\u5c5e\u4e8e\u62bd\u5956\uff0c\u4e0d\u662f\u5fc5\u5f97\u3002",
+    note: "\u6765\u81ea\u7528\u6237\u7ecf\u9a8c\u8d34\uff0c\u73b0\u573a\u53ef\u80fd\u8c03\u6574\u622a\u6b62\u65f6\u95f4\u3002",
   },
 ];
 
 const routeStops = [
-  { time: "09:00", venue: "E6", code: "E6-E096", title: "先拿 HiBy 二次元硬件物料", text: "开场先处理拍照发帖兑换，避免下午排队。" },
-  { time: "09:40", venue: "N1", code: "N1-G001", title: "PlayStation / GSE", text: "先确认 PlayStation 活动，再顺路领取 GSE 小册子和集章本。" },
-  { time: "11:00", venue: "N2", code: "N2-G201", title: "代号：香整理券", text: "优先问整理券和预约卡，发完就跳过长队。" },
-  { time: "11:40", venue: "N2", code: "N2-11-2", title: "好游快爆 / Bilibili", text: "先做短流程试玩和集章，热门互动留到队列较短时。" },
-  { time: "13:30", venue: "N3", code: "N3-01", title: "华为鸿蒙任务", text: "午后处理图鉴任务，先核验移动电源库存和兑换规则。" },
-  { time: "14:20", venue: "N3", code: "N3-10", title: "峡谷争锋集章", text: "有时间再完成整套集章，避免为了单个物料反复折返。" },
-  { time: "15:30", venue: "E6", code: "E6-E201", title: "掌机和硬件体验", text: "错开开场峰值，查看 OneXPlayer、Sony INZONE、VGN。" },
-  { time: "16:20", venue: "E7", code: "E7-S807", title: "E7 集章收尾", text: "松能 X 集章需留意 13:00 截止，晚到只看其他展位。" },
+  { time: "09:00", venue: "E6", code: "E6-E096", title: "\u5148\u62ff HiBy \u4e8c\u6b21\u5143\u786c\u4ef6\u7269\u6599", text: "\u5f00\u573a\u5148\u5904\u7406\u62cd\u7167\u53d1\u5e16\u5151\u6362\uff0c\u907f\u514d\u4e0b\u5348\u6392\u961f\u3002" },
+  { time: "09:40", venue: "N1", code: "N1-G001", title: "PlayStation / GSE", text: "\u5148\u786e\u8ba4 PlayStation \u6d3b\u52a8\uff0c\u518d\u987a\u8def\u9886\u53d6 GSE \u5c0f\u518c\u5b50\u548c\u96c6\u7ae0\u672c\u3002" },
+  { time: "11:00", venue: "N2", code: "N2-G201", title: "\u4ee3\u53f7\uff1a\u9999\u6574\u7406\u5238", text: "\u4f18\u5148\u95ee\u6574\u7406\u5238\u548c\u9884\u7ea6\u5361\uff0c\u53d1\u5b8c\u5c31\u8df3\u8fc7\u957f\u961f\u3002" },
+  { time: "11:40", venue: "N2", code: "N2-11-2", title: "\u597d\u6e38\u5feb\u7206 / Bilibili", text: "\u5148\u505a\u77ed\u6d41\u7a0b\u8bd5\u73a9\u548c\u96c6\u7ae0\uff0c\u70ed\u95e8\u4e92\u52a8\u7559\u5230\u961f\u5217\u8f83\u77ed\u65f6\u3002" },
+  { time: "13:30", venue: "N3", code: "N3-01", title: "\u534e\u4e3a\u9e3f\u8499\u4efb\u52a1", text: "\u5348\u540e\u5904\u7406\u56fe\u9274\u4efb\u52a1\uff0c\u5148\u6838\u9a8c\u79fb\u52a8\u7535\u6e90\u5e93\u5b58\u548c\u5151\u6362\u89c4\u5219\u3002" },
+  { time: "14:20", venue: "N3", code: "N3-10", title: "\u5ce1\u8c37\u4e89\u950b\u96c6\u7ae0", text: "\u6709\u65f6\u95f4\u518d\u5b8c\u6210\u6574\u5957\u96c6\u7ae0\uff0c\u907f\u514d\u4e3a\u4e86\u5355\u4e2a\u7269\u6599\u53cd\u590d\u6298\u8fd4\u3002" },
+  { time: "15:30", venue: "E6", code: "E6-E201", title: "\u638c\u673a\u548c\u786c\u4ef6\u4f53\u9a8c", text: "\u9519\u5f00\u5f00\u573a\u5cf0\u503c\uff0c\u67e5\u770b OneXPlayer\u3001Sony INZONE\u3001VGN\u3002" },
+  { time: "16:20", venue: "E7", code: "E7-S807", title: "E7 \u96c6\u7ae0\u6536\u5c3e", text: "\u677e\u80fd X \u96c6\u7ae0\u9700\u7559\u610f 13:00 \u622a\u6b62\uff0c\u665a\u5230\u53ea\u770b\u5176\u4ed6\u5c55\u4f4d\u3002" },
 ];
 
 const hotspotPositions = {
@@ -531,29 +531,29 @@ function officialToVendor(item) {
   const code = item.code || "";
   const venueMatch = code.replaceAll(/\s+/g, "").match(/^(N[1-5]|E[3-7])/i);
   const venue = venueMatch ? venueMatch[1].toUpperCase() : item.area || code.slice(0, 1) || "";
-  const name = item.name_zh || item.name_en || "未命名展商";
-  const intro = (item.introduction_zh || item.introduction_en || "官方展商信息").replace(/\s+/g, " ").trim();
+  const name = item.name_zh || item.name_en || "\u672a\u547d\u540d\u5c55\u5546";
+  const intro = (item.introduction_zh || item.introduction_en || "\u5b98\u65b9\u5c55\u5546\u4fe1\u606f").replace(/\s+/g, " ").trim();
   return {
     venue,
-    code: item.code || `${venue}-官方展位`,
+    code: item.code || `${venue}-\u5b98\u65b9\u5c55\u4f4d`,
     name,
     type: inferType(`${name} ${intro}`),
-    tags: ["官方名单"],
+    tags: ["\u5b98\u65b9\u540d\u5355"],
     intro: intro.slice(0, 120),
-    egg: "暂无已核验的具体无料记录。",
-    steps: ["到达官方展位", "查看当日活动牌和互动规则", "按现场规则确认是否有领取物料"],
-    requirements: "物料和活动以现场公告为准。",
-    note: "来自 CJ 官方展商名单；页面未把未经核验的赠品写成固定奖励。",
+    egg: "\u6682\u65e0\u5df2\u6838\u9a8c\u7684\u5177\u4f53\u65e0\u6599\u8bb0\u5f55\u3002",
+    steps: ["\u5230\u8fbe\u5b98\u65b9\u5c55\u4f4d", "\u67e5\u770b\u5f53\u65e5\u6d3b\u52a8\u724c\u548c\u4e92\u52a8\u89c4\u5219", "\u6309\u73b0\u573a\u89c4\u5219\u786e\u8ba4\u662f\u5426\u6709\u9886\u53d6\u7269\u6599"],
+    requirements: "\u7269\u6599\u548c\u6d3b\u52a8\u4ee5\u73b0\u573a\u516c\u544a\u4e3a\u51c6\u3002",
+    note: "\u6765\u81ea CJ \u5b98\u65b9\u5c55\u5546\u540d\u5355\uff1b\u9875\u9762\u672a\u628a\u672a\u7ecf\u6838\u9a8c\u7684\u8d60\u54c1\u5199\u6210\u56fa\u5b9a\u5956\u52b1\u3002",
     official: true,
   };
 }
 
 function inferType(text) {
-  if (/键鼠|显示器|硬件|掌机|电竞椅|手机|数码|音频|桌搭/.test(text)) return "硬件";
-  if (/摄影|相机|影像|Polaroid/.test(text)) return "摄影";
-  if (/潮玩|模玩|动漫|二次元|IP|角色/.test(text)) return "二次元 / 潮玩";
-  if (/媒体|平台|发行/.test(text)) return "游戏媒体";
-  return "游戏";
+  if (/\u952e\u9f20|\u663e\u793a\u5668|\u786c\u4ef6|\u638c\u673a|\u7535\u7ade\u6905|\u624b\u673a|\u6570\u7801|\u97f3\u9891|\u684c\u642d/.test(text)) return "\u786c\u4ef6";
+  if (/\u6444\u5f71|\u76f8\u673a|\u5f71\u50cf|Polaroid/.test(text)) return "\u6444\u5f71";
+  if (/\u6f6e\u73a9|\u6a21\u73a9|\u52a8\u6f2b|\u4e8c\u6b21\u5143|IP|\u89d2\u8272/.test(text)) return "\u4e8c\u6b21\u5143 / \u6f6e\u73a9";
+  if (/\u5a92\u4f53|\u5e73\u53f0|\u53d1\u884c/.test(text)) return "\u6e38\u620f\u5a92\u4f53";
+  return "\u6e38\u620f";
 }
 
 function getVendorData(code) {
@@ -581,30 +581,30 @@ function getVenueVendors(venueKey) {
 }
 
 function normalizeText(value = "") {
-  return String(value).toLowerCase().replace(/[\s·・,，.。/\\()（）+&：:「」《》]/g, "");
+  return String(value).toLowerCase().replace(/[\s\u00b7\u30fb,\uff0c.\u3002/\\()\uff08\uff09+&\uff1a:\u300c\u300d\u300a\u300b]/g, "");
 }
 
 const referenceAliases = {
   "n1-aigo": "N1-G202",
   "n1-gse": "N1-G205",
   "n1-playstation": "N1-G001",
-  "n2-代号香": "N2-G201",
-  "n3-华为游戏中心": "N3-01",
-  "n3-暴雪游戏": "N3-03",
-  "e5-淘天潮玩": "E5-FM102",
-  "e6-维信诺": "E6-E001",
-  "e6-索尼inzone": "E6-E002",
-  "e6-傲风": "E6-E003",
+  "n2-\u4ee3\u53f7\u9999": "N2-G201",
+  "n3-\u534e\u4e3a\u6e38\u620f\u4e2d\u5fc3": "N3-01",
+  "n3-\u66b4\u96ea\u6e38\u620f": "N3-03",
+  "e5-\u6dd8\u5929\u6f6e\u73a9": "E5-FM102",
+  "e6-\u7ef4\u4fe1\u8bfa": "E6-E001",
+  "e6-\u7d22\u5c3cinzone": "E6-E002",
+  "e6-\u50b2\u98ce": "E6-E003",
   "e6-hiby": "E6-E096",
   "e6-vgn": "E6-E101",
   "e6-onexplayer": "E6-E201",
-  "e6-绿联": "E6-E506",
+  "e6-\u7eff\u8054": "E6-E506",
   "e6-aulumu": "E6-EDC01",
-  "e7-迈从": "E7-S201",
-  "e7-前行者": "E7-S602",
-  "e7-黑鲨": "E7-S603-1",
-  "e7-达尔优": "E7-S802",
-  "e7-松能x": "E7-S807",
+  "e7-\u8fc8\u4ece": "E7-S201",
+  "e7-\u524d\u884c\u8005": "E7-S602",
+  "e7-\u9ed1\u9ca8": "E7-S603-1",
+  "e7-\u8fbe\u5c14\u4f18": "E7-S802",
+  "e7-\u677e\u80fdx": "E7-S807",
 };
 
 function getReferenceVendor(reference) {
@@ -622,12 +622,12 @@ function getReferenceVendor(reference) {
     code: reference.id,
     name: reference.name,
     type: inferType(reference.name),
-    tags: ["地图厂商"],
-    intro: `${reference.name}，位置来自逛展神器地图。`,
-    egg: "暂无已核验的具体无料记录。",
-    steps: ["到达地图圆点位置", "查看展位活动牌", "按现场规则确认是否有物料"],
-    requirements: "物料和活动以现场公告为准。",
-    note: "厂商名称和位置来自逛展神器地图；详情未与官方展商名单完全匹配。",
+    tags: ["\u5730\u56fe\u5382\u5546"],
+    intro: `${reference.name}\uff0c\u4f4d\u7f6e\u6765\u81ea\u901b\u5c55\u795e\u5668\u5730\u56fe\u3002`,
+    egg: "\u6682\u65e0\u5df2\u6838\u9a8c\u7684\u5177\u4f53\u65e0\u6599\u8bb0\u5f55\u3002",
+    steps: ["\u5230\u8fbe\u5730\u56fe\u5706\u70b9\u4f4d\u7f6e", "\u67e5\u770b\u5c55\u4f4d\u6d3b\u52a8\u724c", "\u6309\u73b0\u573a\u89c4\u5219\u786e\u8ba4\u662f\u5426\u6709\u7269\u6599"],
+    requirements: "\u7269\u6599\u548c\u6d3b\u52a8\u4ee5\u73b0\u573a\u516c\u544a\u4e3a\u51c6\u3002",
+    note: "\u5382\u5546\u540d\u79f0\u548c\u4f4d\u7f6e\u6765\u81ea\u901b\u5c55\u795e\u5668\u5730\u56fe\uff1b\u8be6\u60c5\u672a\u4e0e\u5b98\u65b9\u5c55\u5546\u540d\u5355\u5b8c\u5168\u5339\u914d\u3002",
     referenceOnly: true,
   };
 
@@ -698,14 +698,14 @@ function renderVenueNav() {
 
 function renderHeading() {
   const venue = venues[state.currentVenue];
-  $("#venueKicker").textContent = `${venue.area} / 普通观众可达`;
+  $("#venueKicker").textContent = `${venue.area} / \u666e\u901a\u89c2\u4f17\u53ef\u8fbe`;
   $("#venueTitle").textContent = venue.label;
   $("#venueDescription").textContent = venue.description;
-  $("#mapTitle").textContent = state.currentVenue === "overview" ? "全部场馆" : venue.label;
+  $("#mapTitle").textContent = state.currentVenue === "overview" ? "\u5168\u90e8\u573a\u9986" : venue.label;
   $("#headingMeta").innerHTML = `
-    <span class="meta-tag"><strong>${getVenueCount(state.currentVenue)}</strong> 官方记录</span>
-    <span class="meta-tag"><strong>${spotlight.filter((vendor) => state.currentVenue === "overview" || vendor.venue === state.currentVenue).length}</strong> 重点展位</span>
-    <span class="meta-tag"><strong>${spotlight.filter((vendor) => (state.currentVenue === "overview" || vendor.venue === state.currentVenue) && vendor.hasEgg).length}</strong> 无料记录</span>
+    <span class="meta-tag"><strong>${getVenueCount(state.currentVenue)}</strong> \u5b98\u65b9\u8bb0\u5f55</span>
+    <span class="meta-tag"><strong>${spotlight.filter((vendor) => state.currentVenue === "overview" || vendor.venue === state.currentVenue).length}</strong> \u91cd\u70b9\u5c55\u4f4d</span>
+    <span class="meta-tag"><strong>${spotlight.filter((vendor) => (state.currentVenue === "overview" || vendor.venue === state.currentVenue) && vendor.hasEgg).length}</strong> \u65e0\u6599\u8bb0\u5f55</span>
   `;
 }
 
@@ -713,12 +713,12 @@ function renderMetrics() {
   const venueVendors = getVenueVendors(state.currentVenue);
   const known = venueVendors.filter((vendor) => !vendor.official || vendor.hasEgg);
   const priority = venueVendors.filter((vendor) => vendor.priority).length;
-  const estimate = state.currentVenue === "overview" ? "5—7" : `${Math.max(1, Math.ceil(venueVendors.length / 8))}—${Math.max(2, Math.ceil(venueVendors.length / 5))}`;
+  const estimate = state.currentVenue === "overview" ? "5\u20147" : `${Math.max(1, Math.ceil(venueVendors.length / 8))}\u2014${Math.max(2, Math.ceil(venueVendors.length / 5))}`;
   $("#metricRow").innerHTML = [
-    ["官方展位", venueVendors.length, "个"],
-    ["有物料记录", known.filter((vendor) => vendor.hasEgg).length, "个"],
-    ["偏好优先", priority, "个"],
-    ["建议停留", estimate, "小时"],
+    ["\u5b98\u65b9\u5c55\u4f4d", venueVendors.length, "\u4e2a"],
+    ["\u6709\u7269\u6599\u8bb0\u5f55", known.filter((vendor) => vendor.hasEgg).length, "\u4e2a"],
+    ["\u504f\u597d\u4f18\u5148", priority, "\u4e2a"],
+    ["\u5efa\u8bae\u505c\u7559", estimate, "\u5c0f\u65f6"],
   ].map(([label, value, unit]) => `<div class="metric"><span class="metric-label">${label}</span><div class="metric-value">${value}<small>${unit}</small></div></div>`).join("");
 }
 
@@ -728,7 +728,7 @@ function renderMap() {
   image.classList.add("is-switching");
   window.setTimeout(() => {
     image.src = venue.image;
-    image.alt = `ChinaJoy 2026 ${venue.label}地图`;
+    image.alt = `ChinaJoy 2026 ${venue.label}\u5730\u56fe`;
     image.classList.remove("is-switching");
     positionHotspots();
   }, 80);
@@ -747,7 +747,7 @@ function renderMap() {
     densityToggle.hidden = state.currentVenue === "overview";
     densityToggle.classList.toggle("is-active", state.showAllBooths);
     densityToggle.setAttribute("aria-pressed", String(state.showAllBooths));
-    densityToggle.querySelector("span").textContent = state.showAllBooths ? "全部摊位" : "重点摊位";
+    densityToggle.querySelector("span").textContent = state.showAllBooths ? "\u5168\u90e8\u644a\u4f4d" : "\u91cd\u70b9\u644a\u4f4d";
   }
 
   $("#mapHotspots").innerHTML = spots.map((spot) => {
@@ -755,7 +755,7 @@ function renderMap() {
     const classes = ["map-hotspot", item?.priority ? "is-priority" : "", item?.hasEgg ? "is-egg" : "", spot.isBooth ? "is-booth" : "", state.currentVenue === "overview" ? "overview-hotspot" : ""].filter(Boolean).join(" ");
     const label = state.currentVenue === "overview" ? spot.label : "";
     const name = item?.name || venues[spot.venue]?.label || label;
-    return `<button type="button" class="${classes}" style="left:${spot.left}%;top:${spot.top}%" data-spot-left="${spot.left}" data-spot-top="${spot.top}" data-hotspot-venue="${escapeHtml(spot.venue || state.currentVenue)}" data-hotspot-reference="${escapeHtml(spot.referenceId || "")}" data-hotspot-code="${escapeHtml(item?.code || "")}" title="${escapeHtml(name)}" aria-label="查看 ${escapeHtml(name)}"><span>${escapeHtml(label)}</span></button>`;
+    return `<button type="button" class="${classes}" style="left:${spot.left}%;top:${spot.top}%" data-spot-left="${spot.left}" data-spot-top="${spot.top}" data-hotspot-venue="${escapeHtml(spot.venue || state.currentVenue)}" data-hotspot-reference="${escapeHtml(spot.referenceId || "")}" data-hotspot-code="${escapeHtml(item?.code || "")}" title="${escapeHtml(name)}" aria-label="\u67e5\u770b ${escapeHtml(name)}"><span>${escapeHtml(label)}</span></button>`;
   }).join("");
   positionHotspots();
 }
@@ -786,11 +786,11 @@ function vendorCard(vendor, index) {
   const favorite = state.favorites.has(code);
   const summary = vendor.hasEgg ? vendor.egg : vendor.intro;
   return `
-    <article class="vendor-card ${vendor.priority ? "priority" : ""} ${vendor.hasEgg ? "has-egg" : ""} ${state.selectedBooth && cleanCode(state.selectedBooth.code) === code ? "is-selected" : ""}" data-code="${escapeHtml(vendor.code)}" style="--i:${Math.min(index, 12)}" tabindex="0" role="button" aria-label="查看 ${escapeHtml(vendor.name)} 展位详情">
+    <article class="vendor-card ${vendor.priority ? "priority" : ""} ${vendor.hasEgg ? "has-egg" : ""} ${state.selectedBooth && cleanCode(state.selectedBooth.code) === code ? "is-selected" : ""}" data-code="${escapeHtml(vendor.code)}" style="--i:${Math.min(index, 12)}" tabindex="0" role="button" aria-label="\u67e5\u770b ${escapeHtml(vendor.name)} \u5c55\u4f4d\u8be6\u60c5">
       <div class="vendor-card-top"><span class="vendor-code">${escapeHtml(vendor.code)}</span><span class="vendor-favorite ${favorite ? "is-favorite" : ""}"><i data-lucide="${favorite ? "heart" : "heart"}"></i></span></div>
       <h4>${escapeHtml(vendor.name)}</h4>
       <p>${escapeHtml(summary)}</p>
-      <div class="vendor-card-footer"><span class="vendor-type">${escapeHtml(vendor.type || "官方展位")}</span>${vendor.hasEgg ? '<span class="egg-badge"><i data-lucide="gift"></i>无料</span>' : ""}</div>
+      <div class="vendor-card-footer"><span class="vendor-type">${escapeHtml(vendor.type || "\u5b98\u65b9\u5c55\u4f4d")}</span>${vendor.hasEgg ? '<span class="egg-badge"><i data-lucide="gift"></i>\u65e0\u6599</span>' : ""}</div>
     </article>
   `;
 }
@@ -799,11 +799,11 @@ function renderVendors() {
   const list = getFilteredVendors();
   const max = state.query || state.favoritesOnly ? 80 : state.currentVenue === "overview" ? 60 : 32;
   const visible = list.slice(0, max);
-  $("#vendorTitle").textContent = state.favoritesOnly ? "我的收藏" : state.query ? `搜索结果：${state.query}` : state.currentVenue === "overview" ? "重点厂商" : `${venues[state.currentVenue].label} / 展位信息`;
-  $("#resultCount").textContent = `${visible.length}${visible.length < list.length ? ` / ${list.length}` : ""} 个展位`;
+  $("#vendorTitle").textContent = state.favoritesOnly ? "\u6211\u7684\u6536\u85cf" : state.query ? `\u641c\u7d22\u7ed3\u679c\uff1a${state.query}` : state.currentVenue === "overview" ? "\u91cd\u70b9\u5382\u5546" : `${venues[state.currentVenue].label} / \u5c55\u4f4d\u4fe1\u606f`;
+  $("#resultCount").textContent = `${visible.length}${visible.length < list.length ? ` / ${list.length}` : ""} \u4e2a\u5c55\u4f4d`;
   $("#clearFilter").hidden = !state.query && !state.favoritesOnly;
   if (!visible.length) {
-    $("#vendorGrid").innerHTML = `<div class="empty-grid"><i data-lucide="search-x"></i><strong>没有匹配的展位</strong><span>试试厂商名、展位号或“无料”等关键词。</span></div>`;
+    $("#vendorGrid").innerHTML = `<div class="empty-grid"><i data-lucide="search-x"></i><strong>\u6ca1\u6709\u5339\u914d\u7684\u5c55\u4f4d</strong><span>\u8bd5\u8bd5\u5382\u5546\u540d\u3001\u5c55\u4f4d\u53f7\u6216\u201c\u65e0\u6599\u201d\u7b49\u5173\u952e\u8bcd\u3002</span></div>`;
   } else {
     $("#vendorGrid").innerHTML = visible.map(vendorCard).join("");
   }
@@ -824,14 +824,14 @@ function renderInspector(vendor) {
   content.innerHTML = `
     <div class="inspector-topline">
       <div><span class="inspector-code">${escapeHtml(vendor.code)}</span><h3 class="inspector-title">${escapeHtml(vendor.name)}</h3></div>
-      <button type="button" class="favorite-button ${favorite ? "is-favorite" : ""}" data-favorite-code="${escapeHtml(vendor.code)}" title="${favorite ? "取消收藏" : "收藏展位"}" aria-label="${favorite ? "取消收藏" : "收藏展位"}"><i data-lucide="heart"></i></button>
+      <button type="button" class="favorite-button ${favorite ? "is-favorite" : ""}" data-favorite-code="${escapeHtml(vendor.code)}" title="${favorite ? "\u53d6\u6d88\u6536\u85cf" : "\u6536\u85cf\u5c55\u4f4d"}" aria-label="${favorite ? "\u53d6\u6d88\u6536\u85cf" : "\u6536\u85cf\u5c55\u4f4d"}"><i data-lucide="heart"></i></button>
     </div>
-    <p class="inspector-subtitle">${escapeHtml(vendor.type || "官方展位")} · ${escapeHtml(venues[vendor.venue]?.label || vendor.venue || "普通观众可达")}</p>
-    <div class="tag-row">${(vendor.tags || []).map((tag) => `<span class="tag ${tag === "优先" || vendor.priority && tag === "热门" ? "priority" : ""}">${escapeHtml(tag)}</span>`).join("")}${vendor.official ? '<span class="tag">官方名单</span>' : ""}</div>
-    <div class="detail-block"><span class="detail-label">物料 / 无料</span><p class="detail-text">${escapeHtml(vendor.egg || "暂无已核验记录")}</p></div>
-    <div class="detail-block"><span class="detail-label">领取步骤</span><p class="detail-text">${(vendor.steps || []).map((step, index) => `${index + 1}. ${escapeHtml(step)}`).join("<br>")}</p></div>
-    <div class="detail-block"><span class="detail-label">要求与提醒</span><p class="detail-text detail-note">${escapeHtml(vendor.requirements || "以现场公告为准")}<br>${escapeHtml(vendor.note || "")}</p></div>
-    <div class="inspector-actions"><button type="button" class="action-button" data-add-route="${escapeHtml(vendor.code)}"><i data-lucide="route"></i>${favorite ? "已收藏，加入路线" : "收藏并加入路线"}</button><button type="button" class="action-button secondary" data-open-venue="${escapeHtml(vendor.venue)}"><i data-lucide="map"></i>看场馆地图</button></div>
+    <p class="inspector-subtitle">${escapeHtml(vendor.type || "\u5b98\u65b9\u5c55\u4f4d")} \u00b7 ${escapeHtml(venues[vendor.venue]?.label || vendor.venue || "\u666e\u901a\u89c2\u4f17\u53ef\u8fbe")}</p>
+    <div class="tag-row">${(vendor.tags || []).map((tag) => `<span class="tag ${tag === "\u4f18\u5148" || vendor.priority && tag === "\u70ed\u95e8" ? "priority" : ""}">${escapeHtml(tag)}</span>`).join("")}${vendor.official ? '<span class="tag">\u5b98\u65b9\u540d\u5355</span>' : ""}</div>
+    <div class="detail-block"><span class="detail-label">\u7269\u6599 / \u65e0\u6599</span><p class="detail-text">${escapeHtml(vendor.egg || "\u6682\u65e0\u5df2\u6838\u9a8c\u8bb0\u5f55")}</p></div>
+    <div class="detail-block"><span class="detail-label">\u9886\u53d6\u6b65\u9aa4</span><p class="detail-text">${(vendor.steps || []).map((step, index) => `${index + 1}. ${escapeHtml(step)}`).join("<br>")}</p></div>
+    <div class="detail-block"><span class="detail-label">\u8981\u6c42\u4e0e\u63d0\u9192</span><p class="detail-text detail-note">${escapeHtml(vendor.requirements || "\u4ee5\u73b0\u573a\u516c\u544a\u4e3a\u51c6")}<br>${escapeHtml(vendor.note || "")}</p></div>
+    <div class="inspector-actions"><button type="button" class="action-button" data-add-route="${escapeHtml(vendor.code)}"><i data-lucide="route"></i>${favorite ? "\u5df2\u6536\u85cf\uff0c\u52a0\u5165\u8def\u7ebf" : "\u6536\u85cf\u5e76\u52a0\u5165\u8def\u7ebf"}</button><button type="button" class="action-button secondary" data-open-venue="${escapeHtml(vendor.venue)}"><i data-lucide="map"></i>\u770b\u573a\u9986\u5730\u56fe</button></div>
   `;
   refreshIcons();
 }
@@ -842,7 +842,7 @@ function renderRoute() {
   if (!state.routeOpen) return;
   $("#routeTimeline").innerHTML = routeStops.map((stop, index) => `
     <button type="button" class="route-step" style="--i:${index}" data-route-code="${escapeHtml(stop.code)}" data-route-venue="${escapeHtml(stop.venue)}">
-      <span class="route-time">${escapeHtml(stop.time)} · ${escapeHtml(stop.venue)}</span><h4>${escapeHtml(stop.title)}</h4><p>${escapeHtml(stop.text)}</p>
+      <span class="route-time">${escapeHtml(stop.time)} \u00b7 ${escapeHtml(stop.venue)}</span><h4>${escapeHtml(stop.title)}</h4><p>${escapeHtml(stop.text)}</p>
     </button>
   `).join("");
 }
@@ -851,10 +851,10 @@ function updateFavorite(code, showToast = true) {
   const key = cleanCode(code);
   if (state.favorites.has(key)) {
     state.favorites.delete(key);
-    if (showToast) showToastMessage("已取消收藏");
+    if (showToast) showToastMessage("\u5df2\u53d6\u6d88\u6536\u85cf");
   } else {
     state.favorites.add(key);
-    if (showToast) showToastMessage("已加入收藏");
+    if (showToast) showToastMessage("\u5df2\u52a0\u5165\u6536\u85cf");
   }
   saveFavorites();
   $("#favoriteCount").textContent = state.favorites.size;
@@ -932,7 +932,7 @@ function bindEvents() {
     if (state.currentVenue === "overview") return;
     state.showAllBooths = !state.showAllBooths;
     renderMap();
-    showToastMessage(state.showAllBooths ? "已显示全部官方摊位标签" : "已切换为重点摊位标签");
+    showToastMessage(state.showAllBooths ? "\u5df2\u663e\u793a\u5168\u90e8\u5b98\u65b9\u644a\u4f4d\u6807\u7b7e" : "\u5df2\u5207\u6362\u4e3a\u91cd\u70b9\u644a\u4f4d\u6807\u7b7e");
   });
 
   $("#vendorGrid").addEventListener("click", (event) => {
@@ -959,7 +959,7 @@ function bindEvents() {
       updateFavorite(addRoute.dataset.addRoute, false);
       state.routeOpen = true;
       renderRoute();
-      showToastMessage("已收藏，并打开避峰路线");
+      showToastMessage("\u5df2\u6536\u85cf\uff0c\u5e76\u6253\u5f00\u907f\u5cf0\u8def\u7ebf");
       return;
     }
     const openVenue = event.target.closest("[data-open-venue]");
@@ -982,7 +982,7 @@ function bindEvents() {
   $("#favoritesToggle").addEventListener("click", () => {
     state.favoritesOnly = !state.favoritesOnly;
     $("#favoritesToggle").classList.toggle("is-active", state.favoritesOnly);
-    showToastMessage(state.favoritesOnly ? "只看已收藏展位" : "已显示全部展位");
+    showToastMessage(state.favoritesOnly ? "\u53ea\u770b\u5df2\u6536\u85cf\u5c55\u4f4d" : "\u5df2\u663e\u793a\u5168\u90e8\u5c55\u4f4d");
     renderVendors();
   });
   $("#clearFilter").addEventListener("click", () => {
@@ -1011,7 +1011,7 @@ function bindEvents() {
   $("#resetMap").addEventListener("click", () => {
     state.selectedBooth = null;
     renderInspector(null);
-    showToastMessage("已重置地图视图");
+    showToastMessage("\u5df2\u91cd\u7f6e\u5730\u56fe\u89c6\u56fe");
   });
 }
 
@@ -1026,7 +1026,7 @@ async function loadOfficialExhibitors() {
         break;
       }
     }
-    if (!response) throw new Error("官方展商名单不可用");
+    if (!response) throw new Error("\u5b98\u65b9\u5c55\u5546\u540d\u5355\u4e0d\u53ef\u7528");
     const payload = await response.json();
     state.official = (payload.exhibitors || []).map(officialToVendor);
     state.officialLoaded = true;
@@ -1036,7 +1036,7 @@ async function loadOfficialExhibitors() {
     renderMap();
     renderVendors();
   } catch (error) {
-    console.warn("官方展商名单未加载，页面使用重点展位数据。", error);
+    console.warn("\u5b98\u65b9\u5c55\u5546\u540d\u5355\u672a\u52a0\u8f7d\uff0c\u9875\u9762\u4f7f\u7528\u91cd\u70b9\u5c55\u4f4d\u6570\u636e\u3002", error);
   }
 }
 
@@ -1049,7 +1049,7 @@ async function loadBoothCoordinates() {
     state.referenceLoaded = state.referenceBooths.length > 0;
     if (state.referenceLoaded) renderMap();
   } catch (error) {
-    console.warn("参考地图坐标未加载，页面使用本地展位坐标。", error);
+    console.warn("\u53c2\u8003\u5730\u56fe\u5750\u6807\u672a\u52a0\u8f7d\uff0c\u9875\u9762\u4f7f\u7528\u672c\u5730\u5c55\u4f4d\u5750\u6807\u3002", error);
   }
 }
 
